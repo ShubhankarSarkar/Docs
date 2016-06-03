@@ -1,0 +1,35 @@
+{
+  "name": "px-list-inline-design",
+  "version": "0.2.6",
+  "authors": [
+    "General Electric",
+    "Harry Roberts <harry@csswizardry.com>"
+  ],
+  "description": "Styles for displaying a list as a horizontal row",
+  "main": "_objects.list-inline.scss",
+  "keywords": [
+    "sass",
+    "px",
+    "inline",
+    "lists"
+  ],
+  "license": "Apache 2",
+  "homepage": "https://github.build.ge.com/PXd/px-list-inline-design.git",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "px-defaults-design": "https://github.build.ge.com/PXd/px-defaults-design.git#~0.2.0"
+  },
+  "devDependencies": {
+    "px-buttons-design": "https://github.build.ge.com/PXd/px-buttons-design.git#~0.4.0",
+    "px-code-design": "https://github.build.ge.com/PXd/px-code-design.git#~0.2.0",
+    "px-iconography-design": "https://github.build.ge.com/PXd/px-iconography-design.git#~0.2.0",
+    "px-starter-kit-design": "https://github.build.ge.com/PXd/px-starter-kit-design.git#~0.4.0"
+  }
+}

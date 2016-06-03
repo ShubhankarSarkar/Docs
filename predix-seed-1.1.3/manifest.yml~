@@ -1,0 +1,7 @@
+---
+applications:
+  - name: sds-predix-seed
+    buildpack: https://github.com/muymoo/staticfile-buildpack.git
+    path: dist
+    memory: 64M
+    stack: cflinuxfs2

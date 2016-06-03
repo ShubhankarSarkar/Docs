@@ -1,0 +1,40 @@
+{
+  "name": "px-spacing-responsive-design",
+  "version": "0.3.3",
+  "authors": [
+    "General Electric",
+    "Harry Roberts <harry@csswizardry.com>"
+  ],
+  "description": "Responsively controlled spacing helper classes for Predix Experience",
+  "main": "_trumps.spacing-responsive.scss",
+  "keywords": [
+    "sass",
+    "px",
+    "responsive",
+    "spacing"
+  ],
+  "license": "Apache 2",
+  "homepage": "https://github.build.ge.com/PXd/px-spacing-responsive-design.git",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "inuit-responsive-settings": "~0.1.5",
+    "inuit-responsive-tools": "~0.1.2",
+    "px-spacing-design": "https://github.build.ge.com/PXd/px-spacing-design.git#~0.3.0"
+  },
+  "_release": "0.3.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.3",
+    "commit": "5aa36176a04c8cabcc4889c2a3c81cb856cf82d7"
+  },
+  "_source": "https://github.build.ge.com/PXd/px-spacing-responsive-design.git",
+  "_target": "~0.3.0",
+  "_originalSource": "https://github.build.ge.com/PXd/px-spacing-responsive-design.git"
+}

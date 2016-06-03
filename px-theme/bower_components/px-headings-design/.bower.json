@@ -1,0 +1,44 @@
+{
+  "name": "px-headings-design",
+  "version": "0.2.8",
+  "authors": [
+    "General Electric",
+    "Harry Roberts <harry@csswizardry.com>"
+  ],
+  "description": "Base heading styles for Predix Experience",
+  "main": "_base.headings.scss",
+  "keywords": [
+    "px",
+    "sass",
+    "headings"
+  ],
+  "license": "Apache 2",
+  "homepage": "https://github.build.ge.com/PXd/px-headings-design.git",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "px-defaults-design": "https://github.build.ge.com/PXd/px-defaults-design.git#~0.2.0",
+    "px-mixins-design": "https://github.build.ge.com/PXd/px-mixins-design.git#~0.2.0"
+  },
+  "devDependencies": {
+    "px-buttons-design": "https://github.build.ge.com/PXd/px-buttons-design.git#~0.4.0",
+    "px-code-design": "https://github.build.ge.com/PXd/px-code-design.git#~0.2.0",
+    "px-iconography-design": "https://github.build.ge.com/PXd/px-iconography-design.git#~0.2.0",
+    "px-starter-kit-design": "https://github.build.ge.com/PXd/px-starter-kit-design.git#~0.4.0"
+  },
+  "_release": "0.2.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.8",
+    "commit": "613c294302196302405a9791fadf0fb5c154beb1"
+  },
+  "_source": "https://github.build.ge.com/PXd/px-headings-design.git",
+  "_target": "~0.2.0",
+  "_originalSource": "https://github.build.ge.com/PXd/px-headings-design.git"
+}

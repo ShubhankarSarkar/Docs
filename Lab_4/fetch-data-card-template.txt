@@ -1,0 +1,31 @@
+
+<template>
+	<px-card header-text="Alarms">
+	  <div class="layout center temperature-box">
+		<div class="layout__item">
+		  <table class="table table--fixed">
+			<tr>
+			  <th>Alarm</th>
+			  <th>Classification</th>
+			  <th>Patient First Name</th>
+			  <th>Patient Last Name</th>
+			  <th>Patient Email</th>
+			  <th>Priority</th>
+			  <th>Number of Alarms</th>
+			</tr>
+			  <template is="dom-repeat" items="{{employees}}">
+				<tr>
+				  <td>{{ item.alarm}}</td>
+				  <td>{{ item.alarmClassification}}</td>
+				  <td>{{ item.patient.firstName}}</td>
+				  <td>{{ item.patient.lastName}}</td>
+				  <td>{{ item.patient.email}}</td>
+				  <td>{{ item.priority}}</td>
+				  <td>{{ item.numberOfAlarms}}</td>
+				</tr>
+			</template>
+		  </table>  
+		</div>
+	  </div>
+	</px-card>
+  </template>

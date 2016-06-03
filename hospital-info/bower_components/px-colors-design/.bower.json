@@ -1,0 +1,33 @@
+{
+  "name": "px-colors-design",
+  "version": "0.2.7",
+  "authors": [
+    "General Electric"
+  ],
+  "description": "PX color palette",
+  "main": "_settings.colors.scss",
+  "keywords": [
+    "sass",
+    "px",
+    "colors"
+  ],
+  "license": "Apache 2",
+  "homepage": "https://github.build.ge.com/PXd/px-colors-design.git",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.2.7",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.7",
+    "commit": "9c5b332d9dccf5a55979a835deebf386539800bd"
+  },
+  "_source": "https://github.build.ge.com/PXd/px-colors-design.git",
+  "_target": "~0.2.0",
+  "_originalSource": "https://github.build.ge.com/PXd/px-colors-design.git"
+}

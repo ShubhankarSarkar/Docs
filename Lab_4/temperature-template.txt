@@ -1,0 +1,15 @@
+
+<template>
+	<px-card header-text="Hospital">
+	  <div class="flex temp-box-container">
+		<div class="flex__item temp--box">
+			<table class="table table--fixed">
+				<tr><th class="text--right">Hospital Name :</th><td><span>{{hospitalName}}</span></td></tr>
+				<tr><th class="text--right">Hospital Address :</th><td><span>{{hospitalAddress}}</span></td></tr>
+				<tr><th class="text--right">Phone :</th><td><span>{{hospitalPhone}}</span></td></tr>
+				<tr><th class="text--right">Email :</th><td><span>{{hospitalEmail}}</span></td></tr>
+			</table>          
+		</div>
+	  </div>
+	</px-card>
+</template>

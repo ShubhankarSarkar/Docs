@@ -1,0 +1,37 @@
+{
+  "name": "px-defaults-design",
+  "version": "0.2.4",
+  "authors": [
+    "General Electric",
+    "Harry Roberts"
+  ],
+  "description": "PXd's default settings",
+  "main": "_settings.defaults.scss",
+  "keywords": [
+    "PXd",
+    "Sass",
+    "defaults"
+  ],
+  "license": "Apache 2",
+  "homepage": "https://github.build.ge.com/PXd/px-defaults-design.git",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "px-functions-design": "https://github.build.ge.com/PXd/px-functions-design.git#~0.2.0"
+  },
+  "_release": "0.2.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.4",
+    "commit": "9a97487b999a2edc564e9d54e6ad0b4a6d737ec3"
+  },
+  "_source": "https://github.build.ge.com/PXd/px-defaults-design.git",
+  "_target": "~0.2.0",
+  "_originalSource": "https://github.build.ge.com/PXd/px-defaults-design.git"
+}

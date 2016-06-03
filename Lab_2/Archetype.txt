@@ -1,0 +1,5 @@
+    <archetype>
+      <groupId>com.ge.predix.solsvc.training</groupId>
+      <artifactId>predix-hospital-alarm-service-archetype</artifactId>
+      <version>1.0.0</version>      
+    </archetype>

@@ -1,0 +1,25 @@
+{
+    "name": "hospital-info",
+    "version": "0.0.1",
+    "main": [
+        "hospital-info.html"
+    ],
+    "ignore": [
+        ".*",
+        "npm-debug.log",
+        "Gruntfile.js",
+        "sass",
+        "bower_components",
+        "node_modules",
+        "test"
+    ],
+    "dependencies": {
+        "polymer": "~1.0.0",
+        "px-theme": "https://github.build.ge.com/PXc/px-theme.git#~0.2.11"
+    },
+    "devDependencies": {
+        "iron-component-page" : "PolymerElements/iron-component-page#~v1.0.0",
+        "px-tables-design": "https://github.build.ge.com/PXd/px-tables-design.git#~0.3.0",
+        "px-starter-kit-design": "https://github.build.ge.com/PXd/px-starter-kit-design.git#~0.4.0"
+    }
+}

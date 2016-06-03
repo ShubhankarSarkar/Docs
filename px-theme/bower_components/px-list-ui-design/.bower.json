@@ -1,0 +1,44 @@
+{
+  "name": "px-list-ui-design",
+  "version": "0.3.6",
+  "authors": [
+    "General Electric",
+    "Harry Roberts <harry@csswizardry.com>"
+  ],
+  "description": "A simple, keyline-delimited blocky list object for Predix Experience",
+  "main": "_objects.list-ui.scss",
+  "keywords": [
+    "px",
+    "sass",
+    "list-ui"
+  ],
+  "license": "Apache 2",
+  "homepage": "https://github.build.ge.com/PXd/px-list-ui-design.git",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "px-colors-design": "https://github.build.ge.com/PXd/px-colors-design.git#~0.2.0",
+    "px-defaults-design": "https://github.build.ge.com/PXd/px-defaults-design.git#~0.2.0"
+  },
+  "devDependencies": {
+    "px-code-design": "https://github.build.ge.com/PXd/px-code-design.git#~0.2.0",
+    "px-buttons-design": "https://github.build.ge.com/PXd/px-buttons-design.git#~0.4.0",
+    "px-iconography-design": "https://github.build.ge.com/PXd/px-iconography-design.git#~0.2.0",
+    "px-starter-kit-design": "https://github.build.ge.com/PXd/px-starter-kit-design.git#~0.4.0"
+  },
+  "_release": "0.3.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.6",
+    "commit": "3e8c0fd1b71840973847ef44e351480e96d9854f"
+  },
+  "_source": "https://github.build.ge.com/PXd/px-list-ui-design.git",
+  "_target": "~0.3.0",
+  "_originalSource": "https://github.build.ge.com/PXd/px-list-ui-design.git"
+}

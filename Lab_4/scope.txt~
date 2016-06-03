@@ -1,0 +1,5 @@
+$scope.context = {
+        name: 'This is context',
+        alarmsurl: 'http://<alarm_service_url>/alarmservice',
+        hospitalurl: 'http://<alarm_service_url>/hospital'
+    };

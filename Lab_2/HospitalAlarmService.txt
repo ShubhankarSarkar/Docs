@@ -1,0 +1,58 @@
+package com.ge.predix.solsvc.training.alarmservice;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ge.predix.solsvc.training.alarmservice.dto.AlarmEvent;
+import com.ge.predix.solsvc.training.alarmservice.entity.AlarmEventEntity;
+import com.ge.predix.solsvc.training.alarmservice.entity.HospitalEntity;
+import com.ge.predix.solsvc.training.alarmservice.repository.IAlarmEventEntityRepository;
+import com.ge.predix.solsvc.training.alarmservice.repository.IHospitalEntityRepository;
+
+@RestController
+public class HospitalAlarmService {
+
+	@Autowired
+	private IAlarmEventEntityRepository alarmService;
+	/**
+	* Reference to the Hospital CRUD repository
+	*/
+	@Autowired
+	private IHospitalEntityRepository hospitalRepo;
+
+	@RequestMapping("/alarmservice")
+	public @ResponseBody List<AlarmEvent> helloWorld() {
+		List<AlarmEvent> events = new ArrayList<AlarmEvent>();
+		List<AlarmEventEntity> entities = this.alarmService.findAll();
+		for (AlarmEventEntity entity:entities) {
+			events.add(entity.toAlarmEvent());
+		}
+		System.out.println("Number of Events "+events);
+		return events;
+	}
+	/**
+     * Get hospital name
+     * @param hospitalId hospital name for specific id
+     * @return hospital name
+     */
+	@RequestMapping("/hospital")
+    	public @ResponseBody HospitalDTO getHospital()
+    {
+    	Iterator<HospitalEntity> he = this.hospitalRepo.findAll().iterator();
+        if (he != null && he.hasNext()) {
+        	System.out.println(he);
+        	HospitalDTO h = he.next().getHospital();
+        	return h;
+        } else {
+            return null;
+        }
+    }
+    
+}
+

@@ -1,0 +1,36 @@
+{
+  "name": "px-functions-design",
+  "version": "0.2.4",
+  "authors": [
+    "General Electric"
+  ],
+  "description": "Sass functions for Predix Experience",
+  "main": "_tools.functions.scss",
+  "keywords": [
+    "px",
+    "sass",
+    "functions"
+  ],
+  "license": "Apache 2",
+  "homepage": "https://github.build.ge.com/PXd/px-functions-design.git",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "inuit-functions": "~0.2.0"
+  },
+  "_release": "0.2.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.4",
+    "commit": "acb465705889bf9d519a4b0bc39cf451a1784784"
+  },
+  "_source": "https://github.build.ge.com/PXd/px-functions-design.git",
+  "_target": "~0.2.0",
+  "_originalSource": "https://github.build.ge.com/PXd/px-functions-design.git"
+}

@@ -1,0 +1,36 @@
+[predix@localhost ~]$ cd /predix/git/Docs
+[predix@localhost Docs]$ git status
+On branch master
+nothing to commit, working directory clean
+[predix@localhost Docs]$ git add .
+[predix@localhost Docs]$ git commit -m "uaac commands"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <predix@localhost.localdomain>) not allowed
+[predix@localhost Docs]$ git config --global user.email "shubhankar.sarkar@yahoo.com"
+[predix@localhost Docs]$ git config --global user.name "shubhankar.sarkar@yahoo.com"
+[predix@localhost Docs]$ git commit -m "uaac commands"On branch master
+nothing to commit, working directory clean
+[predix@localhost Docs]$ git status
+On branch master
+nothing to commit, working directory clean
+[predix@localhost Docs]$ git push origin master
+Xlib:  extension "RANDR" missing on display ":381.0".
+Xlib:  extension "RANDR" missing on display ":381.0".
+Counting objects: 4, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 9.68 KiB | 0 bytes/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/ShubhankarSarkar/Docs.git
+ * [new branch]      master -> master
+[predix@localhost Docs]$ 

@@ -1,0 +1,270 @@
+cf cs postgres shared-nr dev-postgres
+  989  cf cs logstash-4 free devendra-logstash
+  990  lssssssssssssssssssssssssssssssssssssssssssssssssss -ltr
+  991  ls -ltr
+  992  ls -lrt
+  993  cf target
+  994  cf login -a https://api.system.aws-usw02-pr.ice.predix.io
+  995  cf a
+  996  cf s
+  997  cf env
+  998  cf env chandra-spring-music.run.aws-usw02-pr.ice.predix.io
+  999  cf env chandra-spring-music
+ 1000  cf m
+ 1001  cd /predix/Desktop/ReadyTech/Inbox/
+ 1002  ls -ltr
+ 1003  python setupservicemaster.py
+ 1004  clear
+ 1005  python setupservicemaster1.py
+ 1006  python setupservicemaster.py
+ 1007  python setupservicemaster1.py
+ 1008  cd /predix/PredixApps/training_labs/
+ 1009  ls -ltr
+ 1010  python setupservicemaster1.py
+ 1011  ls -ltr
+ 1012  cd winddata-timeseries-service/
+ 1013  ls -ltr
+ 1014  vi manifest.yml
+ 1015  cf push machine-winddata-timeseries-service-devendra-ts -f manifest.yml
+ 1016  cf a
+ 1017  cf push machine-winddata-timeseries-service-devendra-ts -f manifest.yml
+ 1018  clear
+ 1019  cf push machine-winddata-timeseries-service-devendra-ts -f manifest.yml
+ 1020  ls -ltr
+ 1021  vi manifest.yml
+ 1022  cf push machine-winddata-timeseries-service-devendra-ts -f manifest.yml
+ 1023  vi manifest.yml
+ 1024  cf push machine-winddata-timeseries-service-devendra-ts -f manifest.yml
+ 1025  cat manifest.yml|grep devendra
+ 1026  cat manifest.yml|grep path
+ 1027  cd target
+ 1028  ls -ltr
+ 1029  pwd
+ 1030  cd ../
+ 1031  ls -ltr
+ 1032  vi manifest.yml
+ 1033  cf push machine-winddata-timeseries-service-devendra-ts -f manifest.yml
+ 1034  cf logs machine-winddata-timeseries-service-devendra-ts --recent
+ 1035  cf a
+ 1036  cf a|grep devendra
+ 1037  cf push machine-winddata-timeseries-service-devendra-ts -f manifest.yml
+ 1038  cf a|grep devendra
+ 1039  cf push machine-winddata-timeseries-service-devendra-ts -f manifest.yml
+ 1040  cf env kibana-devendra
+ 1041  cf a|grep devendra
+ 1042  cf s|grep devendra
+ 1043  cf env chandra-spring-music
+ 1044  cf env kibana-devendra
+ 1045  lllss -ltr\
+ 1046  ls -lltr
+ 1047  ppps -eaf|||ggrep   devenddra
+ 1048  ps  -eaf|grrrep devvvendra
+ 1049  ps -eaf|grep devendra
+ 1050  cd ../
+ 1051  lls   -ltrrr
+ 1052  ls -ltr
+ 1053  python setupservicemaster1.py
+
+===============================================
+
+
+
+
+
+cf cs postgres shared-nr dev-postgres
+  989  cf cs logstash-4 free devendra-logstash
+  990  lssssssssssssssssssssssssssssssssssssssssssssssssss -ltr
+  991  ls -ltr
+  992  ls -lrt
+  993  cf target
+  994  cf login -a https://api.system.aws-usw02-pr.ice.predix.io
+  995  cf a
+  996  cf s
+  997  cf env
+  998  cf env chandra-spring-music.run.aws-usw02-pr.ice.predix.io
+  999  cf env chandra-spring-music
+ 1000  cf m
+ 1001  cd /predix/Documents/MyProject/
+ 1002  ls -ltr
+ 1003  cd devendra-alarm-service/
+ 1004  cf push
+ 1005  cf a
+ 1006  cf push
+ 1007  cf logs predix-alarmservice-dev --recent
+ 1008  pwd
+ 1009  ls -l
+ 1010  cat manifest.yml 
+ 1011  pwd
+ 1012  cf push
+ 1013  cf s
+ 1014  pwd
+ 1015  cf cs postgres shared-nr devendra-postgres
+ 1016  cf s | grep chandra
+ 1017  cf cs postgres shared-nr devendra-postgres
+ 1018  ls -lrt
+ 1019  cf push
+ 1020  cf logs predix-alarmservice-dev --recent
+ 1021  cf push
+ 1022  cf env predix-alarmservice-dev
+ 1023  ls -ltr
+ 1024  mvn clean install
+ 1025  cf push
+ 1026  pwd
+ 1027  cd /predix/
+ 1028  ls -ltr
+ 1029  cd PredixApps/
+ 1030  ls -ltr
+ 1031  cd training_labs/
+ 1032  ls -ltr
+ 1033  cd Fundamentals/
+ 1034  ls -ltr
+ 1035  cd Lab_4
+ 1036  cd ../predix-seed-1.1.3/
+ 1037  ls -ltr
+ 1038  grunt serve
+ 1039  cf a
+ 1040  cf a | grep devendra
+ 1041  cf s|grep devendra
+ 1042  cf env devendra-uaa
+ 1043  cf env kibana-devendra
+ 1044  cf env chandra-spring-music
+ 1045  uaac target https://35adba96-fefc-46e9-b011-11e57b1a7ec8.predix-uaa-training.run.aws-usw02-pr.ice.predix.io
+ 1046  uaac token client get admin -s <devsecret>
+ 1047  uaac token client get admin -s devsecret
+ 1048  ls -ltr
+ 1049  grunt dist
+ 1050  cf push
+ 1051  cf a
+ 1052  uaac token client get admin -s devsecret
+ 1053  uac token decode
+ 1054  uaa token decode
+ 1055  uaac token decode
+ 1056  uaac client add -h
+ 1057  uaac client add dev_user1 -s devscret1 --authorized_grant_types "authorization_code client_credentials refresh_token" --autoapprove openid --authorities "clients.read clients.write scim.read scim.write"
+ 1058  uaac token client get dev_user1 -s devscret1
+ 1059  uaac token decode
+ 1060  cf m
+ 1061  cf create-service predix-asset Tiered devendra-asset-instance -c '{"trustedIssuerIds":["https://299fbc8e-3050-4392-8047-86d3fcc5a145.predix-uaa.run.aws-usw02-pr.ice.predix.io"]}' 
+ 1062  cf s
+ 1063  cf s| grep devendra
+ 1064  cf bind-service trainingsample_DoNotDelete devendra-asset-instance
+ 1065  cf a|grep devendra
+ 1066  cf bind-service kibana-devendra devendra-asset-instance
+ 1067  cf restage kibana-devendra
+ 1068  cf env https://299fbc8e-3050-4392-8047-86d3fcc5a145.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token
+ 1069  cf env kiaban-devendra
+ 1070  cf env kibana-devendra
+ 1071  uaac clients dev_user1
+ 1072  uaac clients
+ 1073  uaac target https://predix-asset.run.aws-usw02-pr.ice.predix.io
+ 1074  uaac token decode 
+ 1075  cf s|grep devendra
+ 1076  cf env devendra-asset-instance
+ 1077  cf env kibana-devendra
+ 1078  cleeeear
+ 1079  cleaaaar
+ 1080  clear
+ 1081  hissstory
+ 1082  history
+[predix@localhost predix-seed-1.1.3]$
+
+========================================
+
+cf cs postgres shared-nr dev-postgres
+  989  cf cs logstash-4 free devendra-logstash
+  990  lssssssssssssssssssssssssssssssssssssssssssssssssss -ltr
+  991  ls -ltr
+  992  ls -lrt
+  993  cf target
+  994  cf login -a https://api.system.aws-usw02-pr.ice.predix.io
+  995  cf a
+  996  cf s
+  997  cf env
+  998  cf env chandra-spring-music.run.aws-usw02-pr.ice.predix.io
+  999  cf env chandra-spring-music
+ 1000  cf m
+ 1001  cf s
+ 1002  cf bind-service chandra-spring-music devendra-logstash
+ 1003  cf a
+ 1004  cf s
+ 1005  cf s | grep chandra-spring-music
+ 1006  clear
+ 1007  cf s | grep chandra-spring-music
+ 1008  cf target
+ 1009  cs s
+ 1010  cf s
+ 1011  cf env devendra-logstash
+ 1012  cf env chandra-spring-music
+ 1013  cf cs predix-uaa-training Free devendra-uaa -c '["adminClientSecret","devsecret"]'
+ 1014  cf cs predix-uaa-training Free devendra-uaa -c '["AdminClientSecret","devsecret"]'
+ 1015  cf cs predix-uaa-training Free devendra-uaa -c '["dev","devsecret"]'
+ 1016  cf s
+ 1017  cf cs predix-uaa-training Free devendra-uaa -c '{"dev","devsecret"}'
+ 1018  cf cs predix-uaa-training Free devendra-uaa -c '["adminClientSecret":"devsecret"]'
+ 1019  cf cs predix-uaa-training Free devendra-uaa -c '{"adminClientSecret":"devsecret"}'
+ 1020  cf s
+ 1021  cf bs chandra-spring-music devendra-uaa
+ 1022  cf s
+ 1023  cf env chandra-spring-music
+ 1024  cf env chandra-spring-music | grep more
+ 1025  cf env chandra-spring-music | more
+ 1026  sudo /etc/init.d/postgresql-9.3 start
+ 1027  cf s
+ 1028  cf a
+ 1029  cf s
+ 1030  pwd
+ 1031  ls -lrt
+ 1032  cd PredixApps/
+ 1033  ls -ltr
+ 1034  cd training_labs/
+ 1035  ls -ltr
+ 1036  cd CloudFoundryLabs/
+ 1037  ls -ltr
+ 1038  cd spring-music/
+ 1039  ls -ltr
+ 1040  git clone https://github.com/cloudfoundry-community/kibana-me-logs.git
+ 1041  ls -ltr
+ 1042  cd kibana-me-logs/
+ 1043  ls -ltr
+ 1044  cf push kibana-devendra --no-start --random-route -b https://github.com/heroku/heroku-buildpack-go.git
+ 1045  ls a
+ 1046  cf a
+ 1047  cf env kibana-devendra
+ 1048  cf bs kibana-devendra devendra-logstash
+ 1049  cf start kibana-devendra
+ 1050  pwd
+ 1051  cs s
+ 1052  cf s
+ 1053  cs s
+ 1054  cf a
+ 1055  cf scale kibana-devendra -i 2
+ 1056  cf a
+ 1057  cf a|grep kibana-devendra
+ 1058  cf scale kibana-devendra -i 3
+ 1059  cf a|grep kibana-devendra
+ 1060  cf scale kibana-devendra -i 1
+ 1061  cf s
+ 1062  clear
+ 1063  cf s
+ 1064  cf traget
+ 1065  cf target
+ 1066  cf s
+ 1067  cf env chandra-postgres
+ 1068  cf env devendra-alarm-service
+ 1069  cf env devendra-kibana
+ 1070  cf s
+ 1071  cf s | grep devendra
+ 1072  cf s | grep dev
+ 1073  cf buildpacks
+ 1074  uaac token decode
+ 1075  clear
+ 1076  history
+[predix@localhost kibana-me-logs]$ 
+[predix@localhost kibana-me-logs]
+
+===========================================================
+
+
+
+
+

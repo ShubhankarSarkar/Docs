@@ -1,0 +1,1 @@
+https://076c9760-ffff-40e3-965b-5b839e860018.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token

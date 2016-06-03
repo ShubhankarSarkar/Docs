@@ -1,0 +1,33 @@
+cf login endpoint: https://api.system.aws-usw02-pr.ice.predix.io 
+
+
+Command to create Asset Service Instance:
+
+cf create-service predix-asset Tiered <your_asset_instance> -c '{"trustedIssuerIds":["https://299fbc8e-3050-4392-8047-86d3fcc5a145.predix-uaa.run.aws-usw02-pr.ice.predix.io"]}' 
+
+
+Command to bind sample application to Asset Service Instance:
+
+cf bind-service trainingsample_DoNotDelete <your_asset_instance>
+
+
+UAA instance URL: 
+https://299fbc8e-3050-4392-8047-86d3fcc5a145.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token
+
+
+Asset Model URL: 
+https://predix-asset.run.aws-usw02-pr.ice.predix.io/locomotive
+
+
+tenant ID: eaccfb4a-6ee6-4df1-acab-afbe41aaa506
+
+
+sample application name to bind to AssetService:  trainingsample_DoNotDelete
+
+
+
+
+
+
+
+

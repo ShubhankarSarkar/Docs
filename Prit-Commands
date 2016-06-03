@@ -1,0 +1,1002 @@
+   14  cd .
+   15  cd ..
+   16  ls
+   17  cd scripts/
+   18  ls
+   19  ./ui-env.sh 
+   20  cd ..
+   21  cd PredixApps/
+   22  ls
+   23  cd training_labs/
+   24  ls
+   25  cd user-interface/
+   26  ls
+   27  cd ..
+   28  cd ~
+   29  cd scripts/
+   30  ls
+   31  ./asset-env.sh 
+   32  ls
+   33  cd ..
+   34  cd scripts/
+   35  ./analytics-env.sh 
+   36  cd ..
+   37  ls
+   38  cd PredixApps/training_labs/
+   39  ls
+   40  cd analytics_course_files/
+   41  ls
+   42  cd scripts/
+   43  ls
+   44  cd ..
+   45  ls
+   46  su
+   47  cd scripts/
+   48  ./analytics-env.sh 
+   49  cd ..
+   50  ls
+   51  cd PredixApps/
+   52  ls
+   53  cd training_labs/
+   54  ls
+   55  cd analytics_course_files/
+   56  ls
+   57  cd ..
+   58  rm -rf training_labs/
+   59  cd ..
+   60  cd scripts/
+   61  ./analytics-env.sh 
+   62  cd ..
+   63  ls
+   64  cd PredixApps/
+   65  ls
+   66  cd training_labs/
+   67  ls
+   68  cd analytics_course_files/
+   69  ls
+   70  rm Analytics_Lab_Guide.pdf 
+   71  ls
+   72  cd ..
+   73  ls
+   74  zip analytics_course_files.zip -d analytics_course_files/
+   75  zip analytics_course_files.zip -r analytics_course_files/
+   76  ls
+   77  mv analytics_course_files.zip ~/env
+   78  ls
+   79  c d..
+   80  cd ..
+   81  LS
+   82  ls
+   83  rm -rf training_labs/
+   84  cd ..
+   85  ls
+   86  cd PredixApps/
+   87  ls
+   88  cd ..
+   89  cd env
+   90  ls
+   91  rm analytics_course_files.zip 
+   92  ls
+   93  unzip predix-analytics.zip 
+   94  ls
+   95  cd analytics_course_files/
+   96  ls
+   97  rm -rf Analytics_Lab_Guide.pdf 
+   98  ls
+   99  cd ..
+  100  ls
+  101  rm -rf predix-analytics.zip 
+  102  ls
+  103  zip predix-analytics.zip -r analytics_course_files/
+  104  ls
+  105  rm -rf analytics_course_files/
+  106  ls
+  107  unzip predix-analytics.zip 
+  108  ls
+  109  cd analytics_course_files/
+  110  ls
+  111  cd ..
+  112  ls
+  113  rm -rf analytics_course_files/
+  114  ls
+  115  cd Downloads/
+  116  ls
+  117  rm -rf predixsdk-15.3.0.zip.part 
+  118  cd ..
+  119  cd Downloads/
+  120  ls
+  121  cd ..
+  122  cd /usr
+  123  ls
+  124  cd java
+  125  ls
+  126  cd ..
+  127  ls
+  128  cd lib
+  129  ls
+  130  cd jvn
+  131  cd jvm
+  132  ls
+  133  pwd
+  134  cd jre-1.8.0-openjdk.x86_64/
+  135  pwd
+  136  cd ~
+  137  cd /et
+  138  cd /etc
+  139  vi bashrc
+  140  more bashrc
+  141  source bashrc
+  142  echo $JAVA_HOME
+  143  which keytool
+  144  cd Downloads/
+  145  ls
+  146  unzip predixsdk-15.3.0.zip 
+  147  cd Downloads/
+  148  ls
+  149  zip predix-machine.zip -r predixsdk-15.3.0/
+  150  rm -rf predixsdk-15.3.0
+  151  rm -rf predixsdk-15.3.0.zip
+  152  cd Downloads/
+  153  mv predix-machine.zip ~/env
+  154  mv Machine_Labs_Guide_v10.1.pdf ~/guides/
+  155  cd ..
+  156  cd scripts/
+  157  ls
+  158  vi machine-env.sh 
+  159  cd ..
+  160  ls
+  161  cd PredixApps/
+  162  ls
+  163  cd ..
+  164  cd s
+  165  cd scripts/
+  166  ls
+  167  ./machine-env.sh 
+  168  cd ..
+  169  cd PredixApps/
+  170  ls
+  171  cd training_labs/
+  172  ls
+  173  cd predixsdk-15.3.0/
+  174  ls
+  175  cd ..
+  176  ls
+  177  cd ~
+  178  ls
+  179  cd scripts/
+  180  vi predix
+  181  ls
+  182  vi machine-env.sh 
+  183  cd ..
+  184  cd PredixApps/
+  185  ls
+  186  rm -rf training_labs/
+  187  cd ~
+  188  cd scripts/
+  189  ./machine-env.sh 
+  190  cd .
+  191  cd ..
+  192  cd  PredixApps/
+  193  ls
+  194  cd training_labs/
+  195  ls
+  196  cd machine/
+  197  ls
+  198  cd scripts/
+  199  ls
+  200  ./analytics-env.sh 
+  201  cd scripts/
+  202  ls
+  203  ./analytics-env.sh 
+  204  cd ..
+  205  cd PredixApps/training_labs/analytics_course_files/
+  206  ls
+  207  cd PredixApps/
+  208  ls
+  209  rm -rf training_labs/
+  210  cd ..
+  211  ls
+  212  cd Downloads/
+  213  ls
+  214  mv 2_10_16_AnalyticsLabFiles.zip predix-analytics.zip
+  215  ls
+  216  rm bomgar-scc-w0yc305f5hgd6ddhj776i51h7ywjgdf6zefh61c40jc90.desktop 
+  217  ls
+  218  cd ..
+  219  ls
+  220  cd env
+  221  ls
+  222  rm -rf predix-analytics.zip 
+  223  cd ..
+  224  cd Downloads/
+  225  ls
+  226  mv predix-analytics.zip ~/env
+  227  cd ..
+  228  ls
+  229  cd env
+  230  ls
+  231  cd ..
+  232  ls
+  233  cd Downloads/
+  234  ls
+  235  cd ..
+  236  cd scripts/
+  237  ls
+  238  ./a
+  239  ./analytics-env.sh 
+  240  cd ..
+  241  cd PredixApps/training_labs/
+  242  ls
+  243  zip predix-analytics.zip -r AnalyticsLabFiles/
+  244  ls
+  245  rm -rf AnalyticsLabFiles/
+  246  mv predix-analytics.zip ~/env
+  247  cd ..
+  248  ls
+  249  cd env
+  250  ls
+  251  ls -l
+  252  clear
+  253  cd scripts/
+  254  ls
+  255  ./cf-env.sh 
+  256  cd ..
+  257  ls
+  258  cd PredixApps/
+  259  ls
+  260  cd training_labs/
+  261  ls
+  262  cd ~
+  263  cd scripts/
+  264  ./fundamentals-env.sh 
+  265  cd 
+  266  cd PredixApps/training_labs/
+  267  ls
+  268  cd predix-seed-1.1.3/
+  269  ls
+  270  cd pub
+  271  cd public
+  272  ls
+  273  cd ..
+  274  cd ~
+  275  ls
+  276  cd scripts/
+  277  ls
+  278  ./security-env.sh 
+  279  ls
+  280  ./ui-env.sh 
+  281  cd ..
+  282  cd PredixApps/training_labs/
+  283  ls
+  284  cd user-interface/
+  285  ls
+  286  cd ~
+  287  ls
+  288  cd scripts/
+  289  ls
+  290  ./asset-env.sh 
+  291  ./analytics-env.sh 
+  292  cd ..
+  293  cd PredixApps/training_labs/
+  294  ls
+  295  cd AnalyticsLabFiles/
+  296  ls
+  297  cd ..
+  298  cd ~
+  299  ls
+  300  cd scripts/
+  301  ls
+  302  ./machine-env.sh 
+  303  cd ..
+  304  cd PredixApps/training_labs/
+  305  ls
+  306  cd machine/
+  307  ls
+  308  cd ..
+  309  cd scripts/
+  310  ./machine-env.sh 
+  311  cd ls
+  312  cd ..
+  313  cd PredixApps/
+  314  ls
+  315  rm -rf training_labs/
+  316  cd Downloads/
+  317  ls
+  318  rm Machine_Labs_Guide_v10.2.pdf 
+  319  ls
+  320  cd ..
+  321  cd PredixApps/
+  322  ls
+  323  cd ..
+  324  ls
+  325  cd PredixApps/
+  326  cd ..
+  327  cd scripts/
+  328  ls
+  329  ./machine-env.sh 
+  330  cd PredixApps/
+  331  ls
+  332  rm -rf training_labs/
+  333  cd ..
+  334  ls
+  335  cd scripts/
+  336  ./analytics-env.sh 
+  337  cd ..
+  338  cd PredixApps/training_labs/
+  339  ls
+  340  cd AnalyticsLabFiles/
+  341  ls
+  342  cd ..
+  343  rm -rf training_labs/
+  344  cd ..
+  345  cd Downloads/
+  346  ls
+  347  cd ..
+  348  cd  PredixApps/
+  349  ls
+  350  cd ..
+  351  cf login
+  352  cf m
+  353  clear
+  354  cf create-service logstash-5 free bill-logging
+  355  cf s
+  356  cf target -s Training2
+  357  cf s
+  358  cf target -s Training1
+  359  cf s
+  360  cf m
+  361  cf target -s Training2
+  362  cf s
+  363  clear
+  364  cf push -h
+  365  cd PredixApps/
+  366  ls
+  367  cd ..
+  368  cd scripts/
+  369  ls
+  370  ./cf-env.sh 
+  371  cd ..
+  372  cd PredixApps/training_labs/CloudFoundryLabs/
+  373  ls
+  374  cd spring-music/
+  375  ls
+  376  cd pre-built/
+  377  ls
+  378  cd ..
+  379  cf push bootcamp-app -p pre-built/spring-music.war
+  380  clear
+  381  cf login
+  382  cf cups
+  383  cf cups bill-test-cups http://livorno.okta.com -p bmilller test
+  384  cd ~
+  385  cd PredixApps
+  386  ls
+  387  cd training_labs
+  388  l
+  389  ls
+  390  cd CloudFoundryLabs/
+  391  ls
+  392  pwd
+  393  ls
+  394  cd cf-spring-mvc-
+  395  cd cf-spring-mvc-demo
+  396  ls
+  397  cf s
+  398  cf targe
+  399  cf target
+  400  cf target -o Predix-Training -s Training2
+  401  cf s
+  402  cf s | grep 212330666-postgres
+  403  cf m
+  404  clear
+  405  cf s
+  406  cf env cf-spring-mvc-demo-212458913
+  407  cf env andy-app
+  408  cf logs bill-test-app
+  409  cf login
+  410  cd guides/
+  411  ls
+  412  rm predix-machine.pdf 
+  413  mv Machine_Labs_Guide_v10.1.pdf predix-machine.pdf
+  414  ls
+  415  chmod 777 predix-machine.pdf 
+  416  ls
+  417  cd ..
+  418  ls
+  419  cd env
+  420  ls
+  421  unzip predix-machine.zip 
+  422  ls
+  423  rm -rf predixsdk-15.3.0/
+  424  ls
+  425  cd scripts/
+  426  ls
+  427  ./machine-env.sh 
+  428  cd ..
+  429  cd PredixApps/training_labs/
+  430  ls
+  431  cd machine/
+  432  ls
+  433  cd ..
+  434  c d..
+  435  cd ..
+  436  rm -rf training_labs/
+  437  cd scripts/
+  438  cd Desktop/
+  439  ls
+  440  chmod 777 all.sh
+  441  ./all.sh 
+  442  cd ..
+  443  cd scripts/
+  444  ls
+  445  ./all.sh 
+  446  cd scripts/
+  447  ls
+  448  ./fundamentals-env.sh 
+  449  cd predixPrefs.epf 
+  450  cd /predix
+  451  ls
+  452  cd PredixApps/training_labs/
+  453  ls
+  454  cd user-interface/
+  455  ls
+  456  mv * ..
+  457  cd ..
+  458  ls
+  459  rm -rm user-interface/
+  460  rm -rf user-interface/
+  461  ls
+  462  cf login
+  463  ifconfig
+  464  apt-get install -y Xvfb libXfont-dev cifs-utils openssh-server pulseaudio
+  465  yum install -y Xvfb libXfont cifs-utils openssh-server pulseaudio
+  466  sudo yum install -y Xvfb libXfont cifs-utils openssh-server pulseaudio
+  467  nano /etc/inittab 
+  468  vi /etc/inittab 
+  469  sudo vi /etc/inittab 
+  470  man shutdown
+  471  shutdown -r
+  472  sudo shutdown -r
+  473  reboot
+  474  ifconfig
+  475  cd /etc/default/
+  476  ls
+  477  ping google.com
+  478  clear
+  479  chkconfig iptables off
+  480  sudo chkconfig iptables off
+  481  systemctl disable firewalld
+  482  clear
+  483  sudo vim /etc/ssh/sshd_config
+  484  vncserver
+  485  yum search vnc
+  486  yum install -y tigervnc-server.x86_64
+  487  sudo yum install -y tigervnc-server.x86_64
+  488  vncserver
+  489  vi /predix/.vnc/xstartup 
+  490  vncserver
+  491  ifconfig
+  492  nano /etc/rc.d/rc.local 
+  493  sudo vi /etc/rc.d/rc.local 
+  494  clear
+  495  ifconfig
+  496  reboot
+  497  cd /tmp/
+  498  ls
+  499  clear
+  500  ls
+  501  netstat plet | grep vnc
+  502  netstat -plut | grep vnc
+  503  sudo netstat -plut | grep vnc
+  504  sudo netstat -lut | grep vnc
+  505  sudo netstat -l | grep vnc
+  506  netstat 
+  507  netstat -l | grep vnc
+  508  netstat -l | less
+  509  clear
+  510  ckconfig
+  511  chkconfig
+  512  chkconfig vncserver on
+  513  sudo chkconfig vncserver on
+  514  chkconfig
+  515  reboot
+  516  sudo reboot
+  517  cd /tmp
+  518  ls
+  519  sudo chkconfig | grep vnc
+  520  systemctl
+  521  netstat -l | less
+  522  clear
+  523  ls
+  524  ls -liah
+  525  cd .X11-unix/
+  526  ls
+  527  ls -liah
+  528  cd ../
+  529  ls
+  530  cd 
+  531  ls
+  532  cd predixPrefs.epf 
+  533  cd ../
+  534  ls
+  535  cd /predix/
+  536  ls
+  537  ls -liah
+  538  clear
+  539  sudo vim /etc/rc.d/rc.local 
+  540  /usr/bin/vncserver -geometry 1280x1024 :0 > /tmp/vncserver.log 2>&1 &
+  541  netstat -l | less
+  542  ps aux | grep vnc
+  543  kill 1392
+  544  ps aux | grep vnc
+  545  ps aux |grep vnc
+  546  chkconfig
+  547  man chkconfig
+  548  clear
+  549  vncserver 
+  550  vncserver kill :0
+  551  vncserver kill :1
+  552  vncserver -kill :1
+  553  vncserver -kill :0
+  554  service vncserver restart
+  555  exit
+  556  service vncserver restart
+  557  exit
+  558  ps aux |grep vnc
+  559  services vncserver restart
+  560  service vncserver restart
+  561  ps aux |grep vnc
+  562  kill 1260
+  563  service vncserver restart
+  564  service vncserver start
+  565  ps aux |grep vnc
+  566  vim /etc/sysconfig/vncservers 
+  567  sudo vim /etc/sysconfig/vncservers 
+  568  ps aux | grep vnc
+  569  sudo reboot
+  570  clear
+  571  cd /etc/sysconfig/vncservers 
+  572  sudo vi /etc/sysconfig/vncservers 
+  573  sudo reboot
+  574  cd /tmp
+  575  ls
+  576  cat vncserver.log 
+  577  clear
+  578  wget https://sourceforge.net/projects/xrdp/files/latest/download
+  579  ls
+  580  mv download download.zip
+  581  mv download.zip download.tar.gz
+  582  yum install -y autoconf automake libtool gcc pam-devel openssl-devel libX11-devel libXfixes-devel
+  583  sudo yum install -y autoconf automake libtool gcc pam-devel openssl-devel libX11-devel libXfixes-devel
+  584  ls
+  585  tar -xzvf download.tar.gz 
+  586  cd xrdp-v0.6.0/
+  587  ls
+  588  ./bootstrap 
+  589  ./configure
+  590  make
+  591  make install
+  592  sudo make install
+  593  vi /etc/xrdp/xrdp.ini 
+  594  clear
+  595  ls
+  596  sudo vi /etc/xrdp/xrdp.ini 
+  597  sudo vim /etc/rc.local 
+  598  sudo reboot
+  599  cat < /dev/null > /etc/udev/rules.d/70-net_persistent_names.rules
+  600  sudo cat < /dev/null > /etc/udev/rules.d/70-net_persistent_names.rules
+  601  cd /etc/udev
+  602  ls
+  603  ls -a
+  604  cd rules.d
+  605  ls
+  606  ls -a
+  607  sudo cat < /dev/null > /etc/udev/rules.d/70-persistent-net.rules
+  608  cd /lob/udev
+  609  cd /
+  610  cd lib/udev
+  611  mv write_net_rules ../
+  612  sudo mv write_net_rules ../
+  613  sudo cat < /dev/null > /etc/udev/rules.d/70-net_persistent_names.rules
+  614  cd /etc/udev/rules.d
+  615  ls
+  616  sudo cat /dev/null > /etc/udev/rules.d/70-net_persistent_names.rules
+  617  cat /dev/null > /etc/udev/rules.d/70-net_persistent_names.rules
+  618  sudo cat /dev null > /etc/udev/rules.d/70-persistent-net.rules
+  619  ls
+  620  ls -a
+  621  ls -l
+  622  su
+  623  exit
+  624  chkconfig
+  625  ps aux |grep vnc
+  626  ps aux |grep xrdp
+  627  .
+  628  clear
+  629  /usr/local/sbin/xrdp &
+  630  clear
+  631  sudo /usr/local/sbi
+  632  sudo /usr/local/sbin/xrdp
+  633  ps aux |grep xrdp
+  634  netstat -l | grep xrdp
+  635  netstat -l | less
+  636  clear
+  637  sudo vim /usr/local/sbin/xrdp
+  638  sudo vim /etc/rc.local 
+  639  chkconfig xrdp start
+  640  chkconfig xrdp
+  641  chkconfig xrdp status
+  642  chkconfig xrdp on
+  643  xrdp
+  644  ps aux | grep xrdp
+  645  sudo kill 1829
+  646  ls
+  647  sudo vim /etc/rc.local 
+  648  cd /home/
+  649  ln -s /predix
+  650  sudo ln -s /predix
+  651  nano /etc/init.d/full
+  652  sudo nano /etc/init.d/full
+  653  cd /etc/init3.d/
+  654  cd /etc/
+  655  ls
+  656  cd init.d
+  657  ln -s ../init/full S99full
+  658  sudo ln -s ../init/full S99full
+  659  cd /opt/VboxGuestAddditions-NNN
+  660  cd /opt/VboxGuestAdditions-NNN
+  661  cd /opt
+  662  ls
+  663  cd VBoxGuestAdditions-4.3.22/
+  664  ./uninstall.sh
+  665  sudo ./uninstall.sh
+  666  sudo rm -rf /etc/cron.daily/tmpwatch
+  667  exit
+  668  su root
+  669  exit
+  670  cd /etc/init.d/
+  671  ls
+  672  ls -l
+  673  sudo rm S99full
+  674  sudo vi S99full
+  675  ls -l
+  676  sudo vi S99full
+  677  sudo nano S99full
+  678  ls -l
+  679  cd /etc/init3.d/
+  680  cd /etc/init.d/
+  681  ls
+  682  ls -l
+  683  cd /etc
+  684  ls
+  685  cd /etc/init3.d
+  686  shutdown -r now
+  687  sudo shutdown -r now
+  688  cd /etc/init.d/
+  689  ls
+  690  sudo mv S99full full
+  691  ls -l
+  692  ls
+  693  cd /etc/init/
+  694  ln -s ../init/full S99full
+  695  sudo ln -s ../init/full S99full
+  696  cd /etc
+  697  ls
+  698  cd init
+  699  ls
+  700  ls -l
+  701  cd /etc/init.d
+  702  ls
+  703  ls -l
+  704  find . -xtype l
+  705  find /etc/init -xtype l
+  706  ls
+  707  cd /etc/init
+  708  ls
+  709  rm S99full 
+  710  sudo S99full 
+  711  sudo rm S99full 
+  712  ls
+  713  cd /etc/init.d
+  714  ls
+  715  cd /etc/init
+  716  ls
+  717  ln -s /etc/init/full S99full
+  718  ls
+  719  pwd
+  720  sudo ln -s /etc/init.d/full S99full
+  721  ls
+  722  ls -l
+  723  exit
+  724  shutdown -r now
+  725  sudo shutdown -r now
+  726  cf login
+  727  cf s
+  728  cf cs logstash-4 free pritee-logstash
+  729  cf services
+  730  cf bind-service chandra-spring-music pritee-logstash
+  731  cf s
+  732  cf env chandra-spring-music
+  733  cf target
+  734  cf scale
+  735  sudo /etc/init.d/postgresql-9.3 start
+  736  cd /predix/Documents/MyProject/alarmservice
+  737  cf push
+  738  cf logs predix-alarmservice-priteeStudent14 --recent
+  739  cf push
+  740  cs s
+  741  cf s
+  742  cf a
+  743  cf restage predix-alarmservice-priteeStudent14
+  744  cf logs predix-alarmservice-priteeStudent14 --recent
+  745  git clone https://github.com/clodfoundry-community/kibana-me-logs.git
+  746  cd kibana-me-logs
+  747  git clone https://github.com/clodfoundry-community/kibana-me-logs.git
+  748  cd /predix/PredixApps
+  749  ls
+  750  cd training_labs/
+  751  cd CloudFoundryLabs/
+  752  mkdir pritee
+  753  cd pritee
+  754  git clone https://github.com/clodfoundry-community/kibana-me-logs.git
+  755  git clone https://github.com/cloudfoundry-community/kibana-me-logs.git
+  756  cd kibana-los-me
+  757  cd kibana-me-logs
+  758  cf push kibana-pritee --no-start --random-route -b https://github.com/heroku/heroku-buildpack-go.git
+  759  cf bind-service kibana-pritee pritee-logstash
+  760  cf start kibana-pritee
+  761  sudo /etc/init.d/postgresql-9.3 start
+  762  pwd
+  763  cd..
+  764  cd /predix/Documents
+  765  ls
+  766  cd MyProject
+  767  ls
+  768  cd alarmservice
+  769  cf push
+  770  cf create-service predix-uaa-training free pritee-uaa -c '{"adminClientSecret":"priteeSecret"}'
+  771  cf marketplace
+  772  cf s
+  773  cf marketplace
+  774  cf s
+  775  cd predix/Documents/MyProject/alarmservice
+  776  cd /predix/Documents/MyProject/alarmservice
+  777  cf push
+  778  cf restage
+  779  cf restage predix-alarmservice-priteestudent14
+  780  cf push
+  781  cf cs predix-uaa-training Free pritee-uaa -c '{"adminClientSecret":"priteeSecret"}'
+  782  cf bs predix-alarmservice-priteeStudent14 pritee-uaa
+  783  cf a
+  784  cf env predix-alarmservice-priteeStudent14
+  785  uaac target https://5bd7035d-9b72-4dad-b690-94828e23101e.predix-uaa-training.run.aws-usw02-pr.ice.predix.io
+  786  uaac token client get admin -s priteeSecret
+  787  uaac token decode
+  788  uaac client -h
+  789  uaac client add -h
+  790  uaac client add uaaSecret -s pritSecret --authorized_grant_types "authorization_code client_credentials refresh_token"  --autoapprove openid --authorities "clients.read clients.write scim.read scim.write"
+  791  uaac token client get uaaSecret -s pritSecret
+  792  cd /predix
+  793  ls
+  794  cd PredixApp
+  795  cd PredixApps
+  796  ls
+  797  cd training_labs/
+  798  cd Fundamentals/
+  799  cd predix-seed-1.1.3/
+  800  grunt serve
+  801  grunt dist
+  802  cf push
+  803  cd../predix
+  804  cd /predix
+  805  cf push
+  806  cd /predix/Documents/MyProject/alarmservice
+  807  cf push
+  808  cd /predix
+  809  cd PredixApps/
+  810  cd training_labs/
+  811  cd Fundamentals/
+  812  cd predix-seed-1.1.3/
+  813  grunt serve
+  814  cf push
+  815  cf a
+  816  cf logs predix-seed-dev-priteeStudent14
+  817  cf logs predix-seed-dev-priteeStudent14 --recent
+  818  cf a
+  819  uaac token client get uaaSecret -s pritSecret
+  820  grunt serve
+  821  cf push
+  822  cf s
+  823  cf cs postgres shared-nr pritee-postgres
+  824  cf create-service predix-asset Tiered kibana-pritee -c '{"trustedIssuerIds":["https://299fbc8e-3050-4392-8047-86d3fcc5a145.predix-uaa.run.aws-usw02-pr.ice.predix.io"]}' 
+  825  cf create-service predix-asset Tiered asset-pritee -c '{"trustedIssuerIds":["https://299fbc8e-3050-4392-8047-86d3fcc5a145.predix-uaa.run.aws-usw02-pr.ice.predix.io"]}' 
+  826  cf bind-service kibana-pritee asset-pritee
+  827  cf restage kibana-pritee
+  828  cf env kibana-pritee
+  829  cf a
+  830  cf bind-service kibana-devendra asset-pritee
+  831  cf env kibana-devendra
+  832  cf env kibana-pritee
+  833  cf env kibana-devendra
+  834  cf create-service predix-asset Tiered asset-pritee-instance -c '{"trustedIssuerIds":["https://299fbc8e-3050-4392-8047-86d3fcc5a145.predix-uaa.run.aws-usw02-pr.ice.predix.io"]}' 
+  835  grunt watch
+  836  cf login -a https://api.system.aws-usw02-pr.ice.predix.io
+  837  cf target
+  838  cf create-service postgres shared-nr sample-postgres-prit
+  839  cf services
+  840  cf services |grep prit
+  841  pwd
+  842  sudo /etc/init.d/postgresql-9.3 start
+  843  cd /predix/PredixApps/
+  844  dir
+  845  cd training_labs/Fundamentals/
+  846  dir
+  847  cf s
+  848  cs a
+  849  cf a
+  850  pwd
+  851  cd predix-seed-1.1.3/
+  852  grunt serve
+  853  grunt dist
+  854  cf push
+  855  clear
+  856  pwd
+  857  cd ..
+  858  p
+  859  dir
+  860  cd ..
+  861  clear
+  862  python setupservicemaster.py
+  863  cd ..
+  864  pwd
+  865  cf create-service predix-uaa-training Free prit-uaa-instance -c '{"adminClientSecret":"pritSecret"}'
+  866  cf bind-service predix-pritee prite-uaa-instance
+  867  cf a
+  868  cf bind-service predix-alarmservice-priteeStudent14  prite-uaa-instance
+  869  cf bind-service predix-alarmservice-priteeStudent14  prit-uaa-instance
+  870  cf restage predix-alarmservice-priteeStudent14
+  871  cf env predix-alarmservice-priteeStudent14
+  872  uaac target https://77b2250a-6b82-40a9-81be-7be5864d0881.predix-uaa-training.run.aws-usw02-pr.ice.predix.io
+  873  uaac token client get admin -s pritSecret
+  874  uaac token decode
+  875  uaac client add -h
+  876  uaac client add client-prit -s client-prit-secret -authorized_grant_types "authorization_code client_credentials refresh_token" --autoapprove openid --authorities "client.read clients.write scim.read scim.write"
+  877  uaac token client get client-oauth-prit -s client-prit-secret
+  878  uaac token client get client-oauth-prit -s pritSecret
+  879  uaac token client get client-prit -s client-prit-secret
+  880  uaac client add client-prit -s client-prit-secret -authorized_grant_types "authorization_code client_credentials refresh_token" --autoapprove openid --authorities "client.read clients.write scim.read scim.write"
+  881  uaac client add client-prit -s client-prit-secret --authorized_grant_types "authorization_code client_credentials refresh_token" --autoapprove openid --authorities "client.read clients.write scim.read scim.write"
+  882  uaac token client get client-prit -s client-prit-secret
+  883  uaac user add studen14 --pritee.padgaonkar@igate.com -p iGate123
+  884  uaac user add studen14 --emails pritee.padgaonkar@igate.com -p iGate123
+  885  uaac group add scim.read
+  886  uaac group add scim.write
+  887  uaac member add scim.read studen14
+  888  uaac member add scim.write studen14
+  889  uaac users
+  890  uaac client add -h
+  891  uaac client add client-prit --redirect_uri predix-seed-dev-priteestudent14.run.aws-usw02-pr.ice.predix.io
+  892  clear
+  893  uaac client add client-prit -s client-prit-secret -authorized_grant_types "authorization_code client_credentials refresh_token" --autoapprove openid --authorities "client.read clients.write scim.read scim.write" --redirect_uri predix-seed-dev-priteestudent14.run.aws-usw02-pr.ice.predix.io
+  894  uaac client add client-prit -s client-prit-secret --authorized_grant_types "authorization_code client_credentials refresh_token" --autoapprove openid --authorities "client.read clients.write scim.read scim.write" --redirect_uri predix-seed-dev-priteestudent14.run.aws-usw02-pr.ice.predix.io
+  895  uaac client add client-pritz -s client-pritz-secret --authorized_grant_types "authorization_code client_credentials refresh_token" --autoapprove openid --authorities "client.read clients.write scim.read scim.write" --redirect_uri predix-seed-dev-priteestudent14.run.aws-usw02-pr.ice.predix.io
+  896  uaac client add client-pritz -s client-pritz-secret --authorized_grant_types "authorization_code client_credentials refresh_token" --autoapprove openid --authorities "clients.read clients.write scim.read scim.write" --redirect_uri predix-seed-dev-priteestudent14.run.aws-usw02-pr.ice.predix.io
+  897  uaac client add client-pritz -s client-pritz-secret --authorized_grant_types "authorization_code client_credentials refresh_token" --autoapprove openid --authorities "clients.read clients.write scim.read scim.write" --redirect_uri "predix-seed-dev-priteestudent14.run.aws-usw02-pr.ice.predix.io"
+  898  clear
+  899  uaac client add pritz -s pritz-secret --authorized_grant_types "authorization_code client_credentials refresh_token" --autoapprove openid --authorities "clients.read clients.write scim.read scim.write" --redirect_uri "predix-seed-dev-priteestudent14.run.aws-usw02-pr.ice.predix.io"
+  900  pwd
+  901  uaac client add pritz -s pritz-secret --authorized_grant_types "authorization_code client_credentials refresh_token" --autoapprove openid --authorities "clients.read clients.write scim.read scim.write"
+  902  cf create-service predix-acs-training Free prit-acs-instance -c '{"trustedIssuerIds":"https://77b2250a-6b82-40a9-81be-7be5864d0881.predix-uaa-training.run.aws-usw02-pr.ice.predix.io/oauth/token"}'
+  903  cf bind-service predix-alarmservice-priteeStudent14 prit-acs-instance
+  904  cf restage predix-alarmservice-priteeStudent14
+  905  cf env predix-alarmservice-priteeStudent14
+  906  uaac token client get admin
+  907  uaac client
+  908  uaac clients
+  909  uaac client update --authorities "clients.read clients.write scim.read scim.write"
+  910  uaac client update --redirect_uri "https://predix-seed-dev-priteestudent14.run.aws-usw02-pr.ice.predix.io"
+  911  clear
+  912  uaac client update --authorities "clients.read clients.write scim.read scim.write zones.77b2250a-6b82-40a9-81be-7be5864d0881.admin acs.policies.read acs.policies.write  acs.attributes.read acs.attributes.write predix-acs-training.zones.b86434b7-11aa-4c8a-9a2f-ecab7ae32c09.user"
+  913  uaac target https://77b2250a-6b82-40a9-81be-7be5864d0881.predix-uaa-training.run.aws-usw02-pr.ice.predix.io
+  914  uaac token client get client-prit
+  915  uaac group add acs.policies.read
+  916  uaac group add acs.policies.write
+  917  uaac group add acs.attributes.write
+  918  uaac group add acs.attributes.read
+  919  cf env predix-alarmservice-priteeStudent14
+  920  uaac group add predix-acs-training.zones.b86434b7-11aa-4c8a-9a2f-ecab7ae32c09.user
+  921  uaac users
+  922  uaac member add acs.policies.read studen14
+  923  uaac member add acs.policies.write studen14
+  924  uaac member add acs.attributes.write studen14
+  925  uaac member add acs.attributes.read studen14
+  926  uaac member add predix-acs-training.zones.b86434b7-11aa-4c8a-9a2f-ecab7ae32c09.user studen14
+  927  cd /predix/PredixApps/
+  928  cd training_labs/Fundamentals/
+  929  dir
+  930  cd hospital-info/
+  931  grunt firstrun
+  932  cf env predix-alarmservice-priteeStudent14
+  933  clear
+  934  cf cs predix-asset Tiered assetService_prit -c '{"trustedIssuerIds":[https://77b2250a-6b82-40a9-81be-7be5864d0881.predix-uaa-training.run.aws-usw02-pr.ice.predix.io]}'
+  935  cf cs predix-asset Tiered assetService_prit -c '{"trustedIssuerIds":["https://77b2250a-6b82-40a9-81be-7be5864d0881.predix-uaa-training.run.aws-usw02-pr.ice.predix.io"]}'
+  936  cf services
+  937  cf bind-service predix-alarmservice-priteeStudent14 assetService_prit
+  938  cf restage predix-alarmservice-priteeStudent14
+  939  cf s
+  940  cf env predix-alarmservice-priteeStudent14
+  941  cd /predix/
+  942  cd PredixApps/training_labs/
+  943  dir
+  944  ls
+  945  cd..
+  946  cd ..
+  947  dir
+  948  python setupservicemaster.py
+  949  clear
+  950  python setupservicemaster.py
+  951  clear
+  952  python setupservicemaster.py
+  953  clear
+  954  python setupservicemaster.py
+  955  clear
+  956  python setupservicemaster.py
+  957  clear
+  958  python setupservicemaster.py
+  959  clear
+  960  python setupservicemaster.py
+  961  clear
+  962  python setupservicemaster.py
+  963  CLEAR
+  964  clear
+  965  python setupservicemaster.py
+  966  cf login https://api.system.aws.usw02-pr.ice.predix.io
+  967  pwd
+  968  clear
+  969  cd PredixApps/
+  970  cd training_labs/
+  971  ls
+  972  cd ..
+  973  ls
+  974  python setupservicemaster.py
+  975  clear
+  976  python setupservicemaster.py
+  977  cf target -s
+  978  cf target -s 
+  979  clear
+  980  ls
+  981  cd Pritee/
+  982  python setupservicemaster.py
+  983  clear
+  984  cd ..
+  985  cf a
+  986  cf -s
+  987  cf help
+  988  cf login https://api.system.aws.uws02-pr.ice.predix.io
+  989  clear
+  990  cd PredixApps/
+  991  cd Pritee
+  992  python setupservicemaster.py
+  993  clear
+  994  python setupservicemaster.py
+  995  clear
+  996  python setupservicemaster.py
+  997  clear
+  998  python setupservicemaster.py
+  999  clear
+ 1000  python setupservicemaster.py
+ 1001  cf login https://api.system.aws.cws02-pr.ice.predix.io
+ 1002  clear
+ 1003  cf login https://api.system.aws.cws02-pr.ice.predix.io
+ 1004  clear
+ 1005  cd PredixApps/
+ 1006  cd Pritee/
+ 1007  python setupservicemaster.py
+ 1008  clear
+ 1009  python setupservicemaster.py
+ 1010  clear
+ 1011  python setupservicemaster.py
+ 1012  clear
+ 1013  history
+[predix@localhost Pritee]$ 
+

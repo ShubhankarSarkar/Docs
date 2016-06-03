@@ -1,0 +1,469 @@
+ "predix-uaa-training": [
+   {
+    "credentials": {
+     "issuerId": "https://5bd7035d-9b72-4dad-b690-94828e23101e.predix-uaa-training.run.aws-usw02-pr.ice.predix.io/oauth/token",
+     "uri": "https://5bd7035d-9b72-4dad-b690-94828e23101e.predix-uaa-training.run.aws-usw02-pr.ice.predix.io",
+     "zone": {
+      "http-header-name": "X-Identity-Zone-Id",
+      "http-header-value": "5bd7035d-9b72-4dad-b690-94828e23101e"
+     }
+    },
+    "label": "predix-uaa-training",
+    "name": "pritee-uaa",
+    "plan": "Free",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": []
+   },
+   {
+    "credentials": {
+     "issuerId": "https://77b2250a-6b82-40a9-81be-7be5864d0881.predix-uaa-training.run.aws-usw02-pr.ice.predix.io/oauth/token",
+     "uri": "https://77b2250a-6b82-40a9-81be-7be5864d0881.predix-uaa-training.run.aws-usw02-pr.ice.predix.io",
+     "zone": {
+      "http-header-name": "X-Identity-Zone-Id",
+      "http-header-value": "77b2250a-6b82-40a9-81be-7be5864d0881"
+     }
+    },
+    "label": "predix-uaa-training",
+    "name": "prit-uaa-instance",
+    "plan": "Free",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": []
+   }
+  ]
+ }
+}
+
+========================================================================================
+jti: 6fa4cbe8-1dbd-4b07-b329-6c5363f48a31
+  sub: admin
+  scope: clients.read zones.77b2250a-6b82-40a9-81be-7be5864d0881.admin clients.secret idps.write uaa.resource clients.write clients.admin idps.read scim.write scim.read
+  client_id: admin
+  cid: admin
+  azp: admin
+  grant_type: client_credentials
+  rev_sig: 9c66d83a
+  iat: 1464838395
+  exp: 1464881595
+  iss: https://77b2250a-6b82-40a9-81be-7be5864d0881.predix-uaa-training.run.aws-usw02-pr.ice.predix.io/oauth/token
+  zid: 77b2250a-6b82-40a9-81be-7be5864d0881
+  aud: admin clients zones.77b2250a-6b82-40a9-81be-7be5864d0881 idps uaa scim
+
+==================================================================================
+
+[predix@localhost ~]$ uaac client add client-prit -s client-prit-secret --authorized_grant_types "authorization_code client_credentials refresh_token" --autoapprove openid --authorities "client.read clients.write scim.read scim.write" --redirect_uri predix-seed-dev-priteestudent14.run.aws-usw02-pr.ice.predix.io
+
+==================NEED TO CONFIRM==================================================
+[predix@localhost ~]$ uaac client add pritz -s pritz-secret --authorized_grant_types "authorization_code client_credentials refresh_token" --autoapprove openid --authorities "clients.read clients.write scim.read scim.write" --redirect_uri "predix-seed-dev-priteestudent14.run.aws-usw02-pr.ice.predix.io"
+
+======================================================================
+ uaac user add studen14 --emails pritee.padgaonkar@igate.com -p iGate123
+
+=================================================================
+[predix@localhost ~]$ uaac users
+  resources: 
+  -
+    id: e0b5bb56-8c1d-4d38-9e9c-289f068b3c46
+    meta
+      version: 0
+      created: 2016-06-02T03:49:26.175Z
+      lastmodified: 2016-06-02T03:49:26.175Z
+    name
+    emails: 
+    -
+      value: pritee.padgaonkar@igate.com
+      primary: false
+    groups: 
+    -
+      value: 83f56f3e-9e8f-4580-bb3e-fed32af6674e
+      display: scim.write
+      type: DIRECT
+    -
+      value: 4107b15f-617e-4070-a772-e006596d285f
+      display: scim.read
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: false
+    origin: uaa
+    schemas: urn:scim:schemas:core:1.0
+    username: studen14
+    zoneid: 77b2250a-6b82-40a9-81be-7be5864d0881
+    passwordlastmodified: 2016-06-02T03:49:26.000Z
+  schemas: urn:scim:schemas:core:1.0
+  startindex: 1
+  itemsperpage: 100
+  totalresults: 1
+
+
+
+
+uaac client add client-prit --redirect_uri predix-seed-dev-priteestudent14.run.aws-usw02-pr.ice.predix.io
+===================================================================================================================
+
+System-Provided:
+{
+ "VCAP_SERVICES": {
+  "logstash-4": [
+   {
+    "credentials": {
+     "hostname": "10.72.6.64",
+     "ports": {
+      "514/tcp": "33938",
+      "9200/tcp": "33939",
+      "9300/tcp": "33940"
+     }
+    },
+    "label": "logstash-4",
+    "name": "pritee-logstash",
+    "plan": "free",
+    "provider": null,
+    "syslog_drain_url": "syslog://10.72.6.64:33938",
+    "tags": [
+     "logstash14",
+     "logstash",
+     "syslog"
+    ]
+   }
+  ],
+  "postgres": [
+   {
+    "credentials": {
+     "ID": 0,
+     "binding_id": "0a70a095-7951-4d3e-88fe-e6f427a3da2c",
+     "database": "dec47dd64c05c413ea798de1ff87c78de",
+     "dsn": "host=10.72.6.135 port=5432 user=u80c5c005d94a4aa09cab551cadd1eb19 password=ffecb68546904ec0920d374dcabf4468 dbname=dec47dd64c05c413ea798de1ff87c78de connect_timeout=5 sslmode=disable",
+     "host": "10.72.6.135",
+     "instance_id": "42541473-1259-412c-8a16-c1f2fe99a5fc",
+     "jdbc_uri": "jdbc:postgres://u80c5c005d94a4aa09cab551cadd1eb19:ffecb68546904ec0920d374dcabf4468@10.72.6.135:5432/dec47dd64c05c413ea798de1ff87c78de?sslmode=disable",
+     "password": "ffecb68546904ec0920d374dcabf4468",
+     "port": "5432",
+     "uri": "postgres://u80c5c005d94a4aa09cab551cadd1eb19:ffecb68546904ec0920d374dcabf4468@10.72.6.135:5432/dec47dd64c05c413ea798de1ff87c78de?sslmode=disable",
+     "username": "u80c5c005d94a4aa09cab551cadd1eb19"
+    },
+    "label": "postgres",
+    "name": "chandra-postgres",
+    "plan": "shared-nr",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": [
+     "rdpg",
+     "postgresql"
+    ]
+   }
+  ],
+  "predix-acs-training": [
+   {
+    "credentials": {
+     "uri": "https://predix-acs-training.run.aws-usw02-pr.ice.predix.io",
+     "zone": {
+      "http-header-name": "Predix-Zone-Id",
+      "http-header-value": "b86434b7-11aa-4c8a-9a2f-ecab7ae32c09",
+      "oauth-scope": "predix-acs-training.zones.b86434b7-11aa-4c8a-9a2f-ecab7ae32c09.user"
+     }
+    },
+    "label": "predix-acs-training",
+    "name": "prit-acs-instance",
+    "plan": "Free",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": []
+   }
+  ],
+  "predix-uaa-training": [
+   {
+    "credentials": {
+     "issuerId": "https://5bd7035d-9b72-4dad-b690-94828e23101e.predix-uaa-training.run.aws-usw02-pr.ice.predix.io/oauth/token",
+     "uri": "https://5bd7035d-9b72-4dad-b690-94828e23101e.predix-uaa-training.run.aws-usw02-pr.ice.predix.io",
+     "zone": {
+      "http-header-name": "X-Identity-Zone-Id",
+      "http-header-value": "5bd7035d-9b72-4dad-b690-94828e23101e"
+     }
+    },
+    "label": "predix-uaa-training",
+    "name": "pritee-uaa",
+    "plan": "Free",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": []
+   },
+   {
+    "credentials": {
+     "issuerId": "https://77b2250a-6b82-40a9-81be-7be5864d0881.predix-uaa-training.run.aws-usw02-pr.ice.predix.io/oauth/token",
+     "uri": "https://77b2250a-6b82-40a9-81be-7be5864d0881.predix-uaa-training.run.aws-usw02-pr.ice.predix.io",
+     "zone": {
+      "http-header-name": "X-Identity-Zone-Id",
+      "http-header-value": "77b2250a-6b82-40a9-81be-7be5864d0881"
+     }
+    },
+    "label": "predix-uaa-training",
+    "name": "prit-uaa-instance",
+    "plan": "Free",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": []
+   }
+  ]
+ }
+}
+
+{
+ "VCAP_APPLICATION": {
+  "application_id": "78e7dd1e-e754-4c32-983f-f4fe373bc6f5",
+  "application_name": "predix-alarmservice-priteeStudent14",
+  "application_uris": [
+   "predix-alarmservice-priteestudent14.run.aws-usw02-pr.ice.predix.io"
+  ],
+  "application_version": "343d50cf-ddfb-4aa7-a78e-6ecb68063992",
+  "limits": {
+   "disk": 1024,
+   "fds": 16384,
+   "mem": 1024
+  },
+  "name": "predix-alarmservice-priteeStudent14",
+  "space_id": "f6e82f91-a54c-4d6b-81f5-ac7578bff341",
+  "space_name": "Training2",
+  "uris": [
+   "predix-alarmservice-priteestudent14.run.aws-usw02-pr.ice.predix.io"
+  ],
+  "users": null,
+  "version": "343d50cf-ddfb-4aa7-a78e-6ecb68063992"
+ }
+}
+
+User-Provided:
+db_service_name: chandra-postgres
+
+No running env variables have been set
+
+No staging env variables have been set
+
+===================================================================================
+Admin Login
+
+adminClientSecret / pritSecret
+
+Successfully fetched token via client credentials grant.
+Target: https://77b2250a-6b82-40a9-81be-7be5864d0881.predix-uaa-training.run.aws-usw02-pr.ice.predix.io
+Context: admin, from client admin
+
+==========================================================================================
+[predix@localhost ~]$ uaac clients
+  admin
+    scope: uaa.none
+    resource_ids: none
+    authorized_grant_types: client_credentials
+    autoapprove: 
+    action: none
+    authorities: clients.read zones.77b2250a-6b82-40a9-81be-7be5864d0881.admin clients.secret idps.write uaa.resource clients.write clients.admin idps.read scim.write
+        scim.read
+    lastmodified: 1464837838070
+  client-prit
+    scope: uaa.none
+    resource_ids: none
+    authorized_grant_types: authorization_code client_credentials refresh_token
+    autoapprove: 
+    action: none
+    authorities: client.read clients.write scim.write scim.read
+    lastmodified: 1464839257832
+
+============== Update client ===============================
+[predix@localhost ~]$ uaac client update --authorities "clients.read clients.write scim.read scim.write"
+Client name:  client-prit
+  scope: uaa.none
+  client_id: client-prit
+  resource_ids: none
+  authorized_grant_types: authorization_code client_credentials refresh_token
+  autoapprove: 
+  action: none
+  authorities: clients.read clients.write scim.write scim.read
+  lastmodified: 1464842261247
+[predix@localhost ~]$ uaac client update --redirect_uri "https://predix-seed-dev-priteestudent14.run.aws-usw02-pr.ice.predix.io"
+Client name:  client-prit
+  scope: uaa.none
+  client_id: client-prit
+  resource_ids: none
+  authorized_grant_types: authorization_code client_credentials refresh_token
+  redirect_uri: https://predix-seed-dev-priteestudent14.run.aws-usw02-pr.ice.predix.io
+  autoapprove: 
+  action: none
+  authorities: clients.read clients.write scim.write scim.read
+  lastmodified: 1464842315961
+===================================================================================================================
+
+uaac client update --authorities "clients.read clients.write scim.read scim.write zones.77b2250a-6b82-40a9-81be-7be5864d0881.admin acs.policies.read acs.policies.write  acs.attributes.read acs.attributes.write predix-acs-training.zones.b86434b7-11aa-4c8a-9a2f-ecab7ae32c09.user"
+
+[predix@localhost ~]$ uaac client update --authorities "clients.read clients.write scim.read scim.write zones.77b2250a-6b82-40a9-81be-7be5864d0881.admin acs.policies.read acs.policies.write  acs.attributes.read acs.attributes.write predix-acs-training.zones.b86434b7-11aa-4c8a-9a2f-ecab7ae32c09.user"
+Client name:  client-prit
+  scope: uaa.none
+  client_id: client-prit
+  resource_ids: none
+  authorized_grant_types: authorization_code client_credentials refresh_token
+  redirect_uri: https://predix-seed-dev-priteestudent14.run.aws-usw02-pr.ice.predix.io
+  autoapprove: 
+  action: none
+  authorities: clients.read acs.policies.read zones.77b2250a-6b82-40a9-81be-7be5864d0881.admin acs.policies.write
+      predix-acs-training.zones.b86434b7-11aa-4c8a-9a2f-ecab7ae32c09.user acs.attributes.read clients.write acs.attributes.write scim.write scim.read
+  lastmodified: 1464843167455
+=======================================================================================================================
+
+System-Provided:
+{
+ "VCAP_SERVICES": {
+  "logstash-4": [
+   {
+    "credentials": {
+     "hostname": "10.72.6.64",
+     "ports": {
+      "514/tcp": "33938",
+      "9200/tcp": "33939",
+      "9300/tcp": "33940"
+     }
+    },
+    "label": "logstash-4",
+    "name": "pritee-logstash",
+    "plan": "free",
+    "provider": null,
+    "syslog_drain_url": "syslog://10.72.6.64:33938",
+    "tags": [
+     "logstash14",
+     "logstash",
+     "syslog"
+    ]
+   }
+  ],
+  "postgres": [
+   {
+    "credentials": {
+     "ID": 0,
+     "binding_id": "0a70a095-7951-4d3e-88fe-e6f427a3da2c",
+     "database": "dec47dd64c05c413ea798de1ff87c78de",
+     "dsn": "host=10.72.6.135 port=5432 user=u80c5c005d94a4aa09cab551cadd1eb19 password=ffecb68546904ec0920d374dcabf4468 dbname=dec47dd64c05c413ea798de1ff87c78de connect_timeout=5 sslmode=disable",
+     "host": "10.72.6.135",
+     "instance_id": "42541473-1259-412c-8a16-c1f2fe99a5fc",
+     "jdbc_uri": "jdbc:postgres://u80c5c005d94a4aa09cab551cadd1eb19:ffecb68546904ec0920d374dcabf4468@10.72.6.135:5432/dec47dd64c05c413ea798de1ff87c78de?sslmode=disable",
+     "password": "ffecb68546904ec0920d374dcabf4468",
+     "port": "5432",
+     "uri": "postgres://u80c5c005d94a4aa09cab551cadd1eb19:ffecb68546904ec0920d374dcabf4468@10.72.6.135:5432/dec47dd64c05c413ea798de1ff87c78de?sslmode=disable",
+     "username": "u80c5c005d94a4aa09cab551cadd1eb19"
+    },
+    "label": "postgres",
+    "name": "chandra-postgres",
+    "plan": "shared-nr",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": [
+     "rdpg",
+     "postgresql"
+    ]
+   }
+  ],
+  "predix-acs-training": [
+   {
+    "credentials": {
+     "uri": "https://predix-acs-training.run.aws-usw02-pr.ice.predix.io",
+     "zone": {
+      "http-header-name": "Predix-Zone-Id",
+      "http-header-value": "b86434b7-11aa-4c8a-9a2f-ecab7ae32c09",
+      "oauth-scope": "predix-acs-training.zones.b86434b7-11aa-4c8a-9a2f-ecab7ae32c09.user"
+     }
+    },
+    "label": "predix-acs-training",
+    "name": "prit-acs-instance",
+    "plan": "Free",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": []
+   }
+  ],
+  "predix-uaa-training": [
+   {
+    "credentials": {
+     "issuerId": "https://5bd7035d-9b72-4dad-b690-94828e23101e.predix-uaa-training.run.aws-usw02-pr.ice.predix.io/oauth/token",
+     "uri": "https://5bd7035d-9b72-4dad-b690-94828e23101e.predix-uaa-training.run.aws-usw02-pr.ice.predix.io",
+     "zone": {
+      "http-header-name": "X-Identity-Zone-Id",
+      "http-header-value": "5bd7035d-9b72-4dad-b690-94828e23101e"
+     }
+    },
+    "label": "predix-uaa-training",
+    "name": "pritee-uaa",
+    "plan": "Free",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": []
+   },
+   {
+    "credentials": {
+     "issuerId": "https://77b2250a-6b82-40a9-81be-7be5864d0881.predix-uaa-training.run.aws-usw02-pr.ice.predix.io/oauth/token",
+     "uri": "https://77b2250a-6b82-40a9-81be-7be5864d0881.predix-uaa-training.run.aws-usw02-pr.ice.predix.io",
+     "zone": {
+      "http-header-name": "X-Identity-Zone-Id",
+      "http-header-value": "77b2250a-6b82-40a9-81be-7be5864d0881"
+     }
+    },
+    "label": "predix-uaa-training",
+    "name": "prit-uaa-instance",
+    "plan": "Free",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": []
+   }
+  ]
+ }
+}
+
+{
+ "VCAP_APPLICATION": {
+  "application_id": "78e7dd1e-e754-4c32-983f-f4fe373bc6f5",
+  "application_name": "predix-alarmservice-priteeStudent14",
+  "application_uris": [
+   "predix-alarmservice-priteestudent14.run.aws-usw02-pr.ice.predix.io"
+  ],
+  "application_version": "343d50cf-ddfb-4aa7-a78e-6ecb68063992",
+  "limits": {
+   "disk": 1024,
+   "fds": 16384,
+   "mem": 1024
+  },
+  "name": "predix-alarmservice-priteeStudent14",
+  "space_id": "f6e82f91-a54c-4d6b-81f5-ac7578bff341",
+  "space_name": "Training2",
+  "uris": [
+   "predix-alarmservice-priteestudent14.run.aws-usw02-pr.ice.predix.io"
+  ],
+  "users": null,
+  "version": "343d50cf-ddfb-4aa7-a78e-6ecb68063992"
+ }
+}
+
+User-Provided:
+db_service_name: chandra-postgres
+
+No running env variables have been set
+
+No staging env variables have been set
+
+======================================================
+"predix-asset": [
+   {
+    "credentials": {
+     "instanceId": "a3c5f9e3-5990-457b-acbb-4fc5df77a4bb",
+     "scriptEngine_uri": "http://a3c5f9e3-5990-457b-acbb-4fc5df77a4bb.predix-script-engine.run.aws-usw02-pr.ice.predix.io",
+     "uri": "https://predix-asset.run.aws-usw02-pr.ice.predix.io",
+     "zone": {
+      "http-header-name": "Predix-Zone-Id",
+      "http-header-value": "a3c5f9e3-5990-457b-acbb-4fc5df77a4bb",
+      "oauth-scope": "predix-asset.zones.a3c5f9e3-5990-457b-acbb-4fc5df77a4bb.user"
+     }
+    },
+    "label": "predix-asset",
+    "name": "assetService_prit",
+    "plan": "Tiered",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": []
+   }
+  ],
+

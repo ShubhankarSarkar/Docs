@@ -1,0 +1,2855 @@
+[predix@localhost ~]$ cf a | grep responsemax
+Getting apps in org responsemax / space responsemax-prod as shubhankar.sarkar@ge.com...
+responsemax                    started           1/1         1G       1G     responsemax-prod.run.aws-usw02-pr.ice.predix.io   
+[predix@localhost ~]$ cf env responsemax
+Getting env variables for app responsemax in org responsemax / space responsemax-prod as shubhankar.sarkar@ge.com...
+OK
+
+System-Provided:
+{
+ "VCAP_SERVICES": {
+  "predix-uaa": [
+   {
+    "credentials": {
+     "issuerId": "https://28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token",
+     "subdomain": "28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2",
+     "uri": "https://28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2.predix-uaa.run.aws-usw02-pr.ice.predix.io",
+     "zone": {
+      "http-header-name": "X-Identity-Zone-Id",
+      "http-header-value": "28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2"
+     }
+    },
+    "label": "predix-uaa",
+    "name": "resmax-prod-uaa",
+    "plan": "Beta",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": []
+   }
+  ],
+  "redis-2": [
+   {
+    "credentials": {
+     "host": "10.72.6.23",
+     "password": "137d6627-98fc-4d7b-a2ae-738352a5ca79",
+     "port": 54032
+    },
+    "label": "redis-2",
+    "name": "responsemax-app-session-store",
+    "plan": "shared-vm",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": [
+     "pivotal",
+     "redis"
+    ]
+   }
+  ]
+ }
+}
+
+{
+ "VCAP_APPLICATION": {
+  "application_id": "7f815ecc-d6ce-4e3a-b15d-020165cd135f",
+  "application_name": "responsemax",
+  "application_uris": [
+   "responsemax-prod.run.aws-usw02-pr.ice.predix.io"
+  ],
+  "application_version": "1f94ff62-83d1-4d0e-872a-d40858f8f948",
+  "limits": {
+   "disk": 1024,
+   "fds": 16384,
+   "mem": 1024
+  },
+  "name": "responsemax",
+  "space_id": "499915bb-a587-499f-88d5-1baa0639543d",
+  "space_name": "responsemax-prod",
+  "uris": [
+   "responsemax-prod.run.aws-usw02-pr.ice.predix.io"
+  ],
+  "users": null,
+  "version": "1f94ff62-83d1-4d0e-872a-d40858f8f948"
+ }
+}
+
+User-Provided:
+ACS_ZONE: 16354c51-8010-4100-9633-833a5eb01171
+ASSET_SERVICE_URI: https://asset-hierarchy-prod.run.aws-usw02-pr.ice.predix.io
+HEALTHINDEX_SERVICE_URI: https://healthIndex-service-prod.run.aws-usw02-pr.ice.predix.io
+LOGOFF_URL: https://affiliateservices.stage.gecompany.com/logoff/logoff.jsp
+NOTIFICATION_SERVICE_URI: https://notification-service-prod.run.aws-usw02-pr.ice.predix.io
+OUTAGE_SERVICE_URI: https://outage-management-service-prod.run.aws-usw02-pr.ice.predix.io
+REDIS_SERVICE: redis-2
+UAA_SERVER_URL: https://28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2.predix-uaa.run.aws-usw02-pr.ice.predix.io
+USER_MGMT_SERVICE_URI: https://user-management-service-prod.run.aws-usw02-pr.ice.predix.io
+WAREHOUSE_SERVICE_URI: https://warehouse-management-service-prod.run.aws-usw02-pr.ice.predix.io
+clientId: resmaxuiapp
+uaa_authorization_header: cmVzbWF4dWlhcHA6cjNzTWF4VUk=
+
+No running env variables have been set
+
+No staging env variables have been set
+
+[predix@localhost ~]$ cf target https://28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2.predix-uaa.run.aws-usw02-pr.ice.predix.io
+FAILED
+Incorrect Usage. No argument required
+
+NAME:
+   target - Set or view the targeted org or space
+
+USAGE:
+   cf target [-o ORG] [-s SPACE]
+
+ALIAS:
+   t
+
+OPTIONS:
+   -o   organization
+   -s   space
+
+[predix@localhost ~]$ uaac target https://28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2.predix-uaa.run.aws-usw02-pr.ice.predix.io
+
+Target: https://28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2.predix-uaa.run.aws-usw02-pr.ice.predix.io
+
+[predix@localhost ~]$ uaac token client get admin -s ch@ng3mE
+
+Successfully fetched token via client credentials grant.
+Target: https://28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2.predix-uaa.run.aws-usw02-pr.ice.predix.io
+Context: admin, from client admin
+
+[predix@localhost ~]$ uaac users
+  resources: 
+  -
+    id: b2f3e748-f581-4442-b451-fc2575248a74
+    meta
+      version: 0
+      created: 2015-10-16T08:16:42.337Z
+      lastmodified: 2015-10-16T08:16:42.337Z
+    name
+    emails: 
+    -
+      value: resmax@example.com
+      primary: false
+    groups: 
+    -
+      value: 2011416a-4857-4373-8d45-a89dbb93f21b
+      display: acs.attributes.read
+      type: DIRECT
+    -
+      value: eed9a357-7e9c-4b13-a633-b90e030a59a9
+      display: acs.policies.read
+      type: DIRECT
+    -
+      value: 5b719a6c-bdda-4c32-89a8-f544024d4703
+      display: predix-acs.zones.16354c51-8010-4100-9633-833a5eb01171.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: uaa
+    schemas: urn:scim:schemas:core:1.0
+    username: resmaxacsusr
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-10-16T08:16:42.337Z
+  -
+    id: e0cffedc-d40e-4c93-a2d2-b22b7111e55e
+    meta
+      version: 0
+      created: 2015-10-16T08:16:52.719Z
+      lastmodified: 2015-10-16T08:16:52.719Z
+    name
+    emails: 
+    -
+      value: resmax@example.com
+      primary: false
+    groups: 
+    -
+      value: 3ed25a55-b091-42bf-83e3-cd04fe5e9ecf
+      display: acs.policies.write
+      type: DIRECT
+    -
+      value: 2011416a-4857-4373-8d45-a89dbb93f21b
+      display: acs.attributes.read
+      type: DIRECT
+    -
+      value: 50ccbf38-aac7-4d4a-b315-5b9fecb235c4
+      display: acs.attributes.write
+      type: DIRECT
+    -
+      value: eed9a357-7e9c-4b13-a633-b90e030a59a9
+      display: acs.policies.read
+      type: DIRECT
+    -
+      value: 5b719a6c-bdda-4c32-89a8-f544024d4703
+      display: predix-acs.zones.16354c51-8010-4100-9633-833a5eb01171.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: uaa
+    schemas: urn:scim:schemas:core:1.0
+    username: resmaxpolicyadmin
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-10-16T08:16:52.719Z
+  -
+    id: 33314019-640a-4558-ae50-d56ead8ce374
+    meta
+      version: 0
+      created: 2015-10-16T08:17:02.021Z
+      lastmodified: 2015-10-16T08:17:02.021Z
+    name
+    emails: 
+    -
+      value: resmax@example.com
+      primary: false
+    groups: 
+    -
+      value: d7e28c4e-19c7-4285-abc1-db4aa3e863cb
+      display: uaa.resource
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: uaa
+    schemas: urn:scim:schemas:core:1.0
+    username: relmaxsvcusr
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-10-16T08:17:02.021Z
+  -
+    id: cd63bdef-14f9-47c2-9675-aa474bdb3830
+    meta
+      version: 0
+      created: 2015-10-21T20:31:13.918Z
+      lastmodified: 2015-10-21T20:31:13.918Z
+    name
+    emails: 
+    -
+      value: resmax@example.com
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: false
+    origin: uaa
+    schemas: urn:scim:schemas:core:1.0
+    username: 212061719
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-10-21T20:31:13.918Z
+  -
+    id: 8002c927-82fc-4f74-aed7-6926095d4ff9
+    meta
+      version: 0
+      created: 2015-11-04T16:59:05.693Z
+      lastmodified: 2015-11-04T16:59:05.693Z
+    name
+      familyname: unknown.org
+      givenname: 212071455
+    emails: 
+    -
+      value: 212071455@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212071455
+    username: 212071455
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-04T16:59:05.693Z
+  -
+    id: a675814f-727b-48b2-a37d-b9f90ee93ead
+    meta
+      version: 0
+      created: 2015-11-04T18:23:36.783Z
+      lastmodified: 2015-11-04T18:23:36.783Z
+    name
+      familyname: unknown.org
+      givenname: 212404414
+    emails: 
+    -
+      value: 212404414@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212404414
+    username: 212404414
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-04T18:23:36.783Z
+  -
+    id: a6e9e409-9f46-4020-b0d4-20e7384310dd
+    meta
+      version: 0
+      created: 2015-11-04T19:51:45.667Z
+      lastmodified: 2015-11-04T19:51:45.667Z
+    name
+      familyname: unknown.org
+      givenname: 212367364
+    emails: 
+    -
+      value: 212367364@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212367364
+    username: 212367364
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-04T19:51:45.667Z
+  -
+    id: 113dce0e-e95c-4c4c-8e3e-531d3040b33c
+    meta
+      version: 0
+      created: 2015-11-04T23:27:00.501Z
+      lastmodified: 2015-11-04T23:27:00.501Z
+    name
+      familyname: unknown.org
+      givenname: 502532669
+    emails: 
+    -
+      value: 502532669@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 502532669
+    username: 502532669
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-04T23:27:00.501Z
+  -
+    id: eca680bc-1eb7-4a3d-a448-bca364d2d0f3
+    meta
+      version: 0
+      created: 2015-11-04T23:41:51.661Z
+      lastmodified: 2015-11-04T23:41:51.661Z
+    name
+      familyname: unknown.org
+      givenname: 212359548
+    emails: 
+    -
+      value: 212359548@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212359548
+    username: 212359548
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-04T23:41:51.661Z
+  -
+    id: aef4a87a-ab64-4907-bc7a-b46fd03de2b0
+    meta
+      version: 0
+      created: 2015-11-05T19:01:19.462Z
+      lastmodified: 2015-11-05T19:01:19.462Z
+    name
+      familyname: unknown.org
+      givenname: 212402415
+    emails: 
+    -
+      value: 212402415@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212402415
+    username: 212402415
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-05T19:01:19.462Z
+  -
+    id: a972c1a4-a725-47cb-b261-740d07b87306
+    meta
+      version: 0
+      created: 2015-11-05T19:08:18.850Z
+      lastmodified: 2015-11-05T19:08:18.850Z
+    name
+      familyname: unknown.org
+      givenname: 212349651
+    emails: 
+    -
+      value: 212349651@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212349651
+    username: 212349651
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-05T19:08:18.850Z
+  -
+    id: b4df8763-ae3a-4ce6-9bfd-51dfe85146bd
+    meta
+      version: 0
+      created: 2015-11-06T00:59:35.138Z
+      lastmodified: 2015-11-06T00:59:35.138Z
+    name
+      familyname: unknown.org
+      givenname: 212419672
+    emails: 
+    -
+      value: 212419672@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212419672
+    username: 212419672
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-06T00:59:35.138Z
+  -
+    id: be870bc8-9407-424a-9035-ed5f46037535
+    meta
+      version: 0
+      created: 2015-11-06T14:14:20.370Z
+      lastmodified: 2015-11-06T14:14:20.370Z
+    name
+      familyname: unknown.org
+      givenname: 105034888
+    emails: 
+    -
+      value: 105034888@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105034888
+    username: 105034888
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-06T14:14:20.370Z
+  -
+    id: a9730728-a163-4cfb-98c3-a21918d6ca8a
+    meta
+      version: 0
+      created: 2015-11-07T01:23:03.159Z
+      lastmodified: 2015-11-07T01:23:03.159Z
+    name
+      familyname: unknown.org
+      givenname: 502380529
+    emails: 
+    -
+      value: 502380529@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 502380529
+    username: 502380529
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-07T01:23:03.159Z
+  -
+    id: 52a12243-8c84-4dcf-b54b-5e7290522b31
+    meta
+      version: 0
+      created: 2015-11-10T09:12:05.080Z
+      lastmodified: 2015-11-10T09:12:05.080Z
+    name
+      familyname: unknown.org
+      givenname: 302014683
+    emails: 
+    -
+      value: 302014683@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 302014683
+    username: 302014683
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-10T09:12:05.080Z
+  -
+    id: 23654b75-dcf2-4cae-895a-43ab4c66888a
+    meta
+      version: 0
+      created: 2015-11-10T16:19:01.410Z
+      lastmodified: 2015-11-10T16:19:01.410Z
+    name
+      familyname: unknown.org
+      givenname: 502188220
+    emails: 
+    -
+      value: 502188220@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 502188220
+    username: 502188220
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-10T16:19:01.410Z
+  -
+    id: e00d916b-84de-4eab-9d8c-1d7d57b9d0c9
+    meta
+      version: 0
+      created: 2015-11-10T16:48:15.055Z
+      lastmodified: 2015-11-10T16:48:15.055Z
+    name
+      familyname: unknown.org
+      givenname: 502532656
+    emails: 
+    -
+      value: 502532656@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 502532656
+    username: 502532656
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-10T16:48:15.055Z
+  -
+    id: be037787-b24e-4b49-bb66-08428ddefecb
+    meta
+      version: 0
+      created: 2015-11-10T16:51:15.846Z
+      lastmodified: 2015-11-10T16:51:15.846Z
+    name
+      familyname: unknown.org
+      givenname: 501039897
+    emails: 
+    -
+      value: 501039897@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 501039897
+    username: 501039897
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-10T16:51:15.846Z
+  -
+    id: d4b36461-e216-4851-b3ed-03a33586db99
+    meta
+      version: 0
+      created: 2015-11-13T21:08:11.376Z
+      lastmodified: 2015-11-13T21:08:11.376Z
+    name
+      familyname: unknown.org
+      givenname: 212438472
+    emails: 
+    -
+      value: 212438472@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212438472
+    username: 212438472
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-13T21:08:11.376Z
+  -
+    id: 92c6ef18-7059-42da-ae1e-f8971e4c23ab
+    meta
+      version: 0
+      created: 2015-11-13T22:33:52.408Z
+      lastmodified: 2015-11-13T22:33:52.408Z
+    name
+      familyname: unknown.org
+      givenname: 212417330
+    emails: 
+    -
+      value: 212417330@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212417330
+    username: 212417330
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-13T22:33:52.408Z
+  -
+    id: b74431d0-e0bb-4fde-bbc6-c4aedfdd1a32
+    meta
+      version: 0
+      created: 2015-11-14T00:04:34.371Z
+      lastmodified: 2015-11-14T00:04:34.371Z
+    name
+      familyname: unknown.org
+      givenname: 300000509
+    emails: 
+    -
+      value: 300000509@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 300000509
+    username: 300000509
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-14T00:04:34.371Z
+  -
+    id: d132d802-0aca-4d6f-8337-db3827c5e0d4
+    meta
+      version: 0
+      created: 2015-11-14T02:42:58.787Z
+      lastmodified: 2015-11-14T02:42:58.787Z
+    name
+      familyname: unknown.org
+      givenname: 300009034
+    emails: 
+    -
+      value: 300009034@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 300009034
+    username: 300009034
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-14T02:42:58.787Z
+  -
+    id: 56aaa1a2-1b88-44e3-8d8d-cd00643d0e0c
+    meta
+      version: 0
+      created: 2015-11-14T10:06:43.643Z
+      lastmodified: 2015-11-14T10:06:43.643Z
+    name
+      familyname: unknown.org
+      givenname: 105051874
+    emails: 
+    -
+      value: 105051874@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105051874
+    username: 105051874
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-14T10:06:43.643Z
+  -
+    id: ae5bf0c8-b04c-450f-8f57-8dc21c52e4ad
+    meta
+      version: 0
+      created: 2015-11-15T22:48:06.667Z
+      lastmodified: 2015-11-15T22:48:06.667Z
+    name
+      familyname: unknown.org
+      givenname: NKP605T
+    emails: 
+    -
+      value: NKP605T@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: NKP605T
+    username: NKP605T
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-15T22:48:06.667Z
+  -
+    id: c5730d3c-dd12-4577-8aed-b4d6dfbffddd
+    meta
+      version: 0
+      created: 2015-11-16T00:41:04.967Z
+      lastmodified: 2015-11-16T00:41:04.967Z
+    name
+      familyname: unknown.org
+      givenname: whitewayj
+    emails: 
+    -
+      value: whitewayj@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: whitewayj
+    username: whitewayj
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-16T00:41:04.967Z
+  -
+    id: 9fea53a5-2e65-4b32-be7c-4d7281508a99
+    meta
+      version: 0
+      created: 2015-11-16T01:35:30.096Z
+      lastmodified: 2015-11-16T01:35:30.096Z
+    name
+      familyname: petronas.com.my
+      givenname: khairul_rijal
+    emails: 
+    -
+      value: khairul_rijal@petronas.com.my
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: khairul_rijal@petronas.com.my
+    username: khairul_rijal@petronas.com.my
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-16T01:35:30.096Z
+  -
+    id: d4cc4641-f77a-472c-9d7f-7c32f4d7c42f
+    meta
+      version: 0
+      created: 2015-11-16T02:18:23.621Z
+      lastmodified: 2015-11-16T02:18:23.621Z
+    name
+      familyname: unknown.org
+      givenname: 105711343
+    emails: 
+    -
+      value: 105711343@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105711343
+    username: 105711343
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-16T02:18:23.621Z
+  -
+    id: 21d3df58-40fd-49b7-87b1-281d5f54ae8f
+    meta
+      version: 0
+      created: 2015-11-16T15:39:16.830Z
+      lastmodified: 2015-11-16T15:39:16.830Z
+    name
+      familyname: unknown.org
+      givenname: 212325398
+    emails: 
+    -
+      value: 212325398@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212325398
+    username: 212325398
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-16T15:39:16.830Z
+  -
+    id: e5f3d7c3-3057-45ec-9a41-f64ac64f6271
+    meta
+      version: 0
+      created: 2015-11-16T17:36:01.035Z
+      lastmodified: 2015-11-16T17:36:01.035Z
+    name
+      familyname: unknown.org
+      givenname: 212337172
+    emails: 
+    -
+      value: 212337172@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212337172
+    username: 212337172
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-16T17:36:01.035Z
+  -
+    id: d1e994cf-0fa0-418b-bc56-37e1a5dee061
+    meta
+      version: 0
+      created: 2015-11-16T21:10:43.473Z
+      lastmodified: 2015-11-16T21:10:43.473Z
+    name
+      familyname: unknown.org
+      givenname: 212412919
+    emails: 
+    -
+      value: 212412919@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212412919
+    username: 212412919
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-16T21:10:43.473Z
+  -
+    id: a8378452-ee16-4cd2-8642-28aefcc5daa6
+    meta
+      version: 0
+      created: 2015-11-16T22:34:53.983Z
+      lastmodified: 2015-11-16T22:34:53.983Z
+    name
+      familyname: unknown.org
+      givenname: EOM50243
+    emails: 
+    -
+      value: EOM50243@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: EOM50243
+    username: EOM50243
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-16T22:34:53.983Z
+  -
+    id: 8ad9026c-7048-4bcc-b43d-5141ae9db4d8
+    meta
+      version: 0
+      created: 2015-11-17T03:03:49.916Z
+      lastmodified: 2015-11-17T03:03:49.916Z
+    name
+      familyname: unknown.org
+      givenname: ShannonG01
+    emails: 
+    -
+      value: ShannonG01@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: ShannonG01
+    username: ShannonG01
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-17T03:03:49.916Z
+  -
+    id: cf7654ff-9a60-49f0-ab53-86efdeff11f9
+    meta
+      version: 0
+      created: 2015-11-17T03:41:08.417Z
+      lastmodified: 2015-11-17T03:41:08.417Z
+    name
+      familyname: unknown.org
+      givenname: 105703335
+    emails: 
+    -
+      value: 105703335@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105703335
+    username: 105703335
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-17T03:41:08.417Z
+  -
+    id: 345e7c8e-6309-4da1-b4f2-85783b461b52
+    meta
+      version: 0
+      created: 2015-11-17T10:28:23.694Z
+      lastmodified: 2015-11-17T10:28:23.694Z
+    name
+      familyname: unknown.org
+      givenname: 105052824
+    emails: 
+    -
+      value: 105052824@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105052824
+    username: 105052824
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-17T10:28:23.694Z
+  -
+    id: 5f99be60-075b-48dd-8e0c-c8dc3320cb1a
+    meta
+      version: 0
+      created: 2015-11-17T10:33:28.725Z
+      lastmodified: 2015-11-17T10:33:28.725Z
+    name
+      familyname: unknown.org
+      givenname: 105712093
+    emails: 
+    -
+      value: 105712093@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105712093
+    username: 105712093
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-17T10:33:28.725Z
+  -
+    id: 7af9e3e6-0886-4a13-adbc-8b8232ffb2a4
+    meta
+      version: 0
+      created: 2015-11-17T11:15:37.317Z
+      lastmodified: 2015-11-17T11:15:37.317Z
+    name
+      familyname: unknown.org
+      givenname: 105050060
+    emails: 
+    -
+      value: 105050060@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105050060
+    username: 105050060
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-17T11:15:37.317Z
+  -
+    id: 893565ce-5ffe-428c-b503-ef9776d1e407
+    meta
+      version: 0
+      created: 2015-11-17T11:56:08.208Z
+      lastmodified: 2015-11-17T11:56:08.208Z
+    name
+      familyname: unknown.org
+      givenname: 105056802
+    emails: 
+    -
+      value: 105056802@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105056802
+    username: 105056802
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-17T11:56:08.208Z
+  -
+    id: 7e1899a1-d125-40c8-99eb-8493b72ab1dd
+    meta
+      version: 0
+      created: 2015-11-17T16:43:15.501Z
+      lastmodified: 2015-11-17T16:43:15.501Z
+    name
+      familyname: unknown.org
+      givenname: 212473490
+    emails: 
+    -
+      value: 212473490@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212473490
+    username: 212473490
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-17T16:43:15.501Z
+  -
+    id: 87fa3231-f434-4c10-92d6-8b4fc985ca4d
+    meta
+      version: 0
+      created: 2015-11-18T16:54:11.746Z
+      lastmodified: 2015-11-18T16:54:11.746Z
+    name
+      familyname: unknown.org
+      givenname: pietrasikm
+    emails: 
+    -
+      value: pietrasikm@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: pietrasikm
+    username: pietrasikm
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-18T16:54:11.746Z
+  -
+    id: 2743f2dc-63ac-4c8a-a6e6-6a17919f7b70
+    meta
+      version: 0
+      created: 2015-11-18T18:17:33.154Z
+      lastmodified: 2015-11-18T18:17:33.154Z
+    name
+      familyname: unknown.org
+      givenname: 212339612
+    emails: 
+    -
+      value: 212339612@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212339612
+    username: 212339612
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-18T18:17:33.154Z
+  -
+    id: 018997d7-296d-4cef-8a70-1d4583dd3cfa
+    meta
+      version: 0
+      created: 2015-11-18T19:10:34.589Z
+      lastmodified: 2015-11-18T19:10:34.589Z
+    name
+      familyname: unknown.org
+      givenname: 212305844
+    emails: 
+    -
+      value: 212305844@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212305844
+    username: 212305844
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-18T19:10:34.589Z
+  -
+    id: 0bacd44c-af4d-4e45-950b-4faefb4428bb
+    meta
+      version: 0
+      created: 2015-11-18T22:45:30.529Z
+      lastmodified: 2015-11-18T22:45:30.529Z
+    name
+      familyname: unknown.org
+      givenname: 105055625
+    emails: 
+    -
+      value: 105055625@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105055625
+    username: 105055625
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-18T22:45:30.529Z
+  -
+    id: 2c393c85-a5eb-4ad0-82f0-728bf9c0f852
+    meta
+      version: 0
+      created: 2015-11-19T08:25:14.278Z
+      lastmodified: 2015-11-19T08:25:14.278Z
+    name
+      familyname: unknown.org
+      givenname: 105703720
+    emails: 
+    -
+      value: 105703720@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105703720
+    username: 105703720
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-19T08:25:14.278Z
+  -
+    id: 5a456fc8-14ea-45ce-b7c6-5e0a9db0618b
+    meta
+      version: 0
+      created: 2015-11-19T13:49:23.147Z
+      lastmodified: 2015-11-19T13:49:23.147Z
+    name
+      familyname: unknown.org
+      givenname: 105031892
+    emails: 
+    -
+      value: 105031892@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105031892
+    username: 105031892
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-19T13:49:23.147Z
+  -
+    id: 9ba9c899-26c4-431f-832e-075ae6607e4e
+    meta
+      version: 0
+      created: 2015-11-19T17:38:43.365Z
+      lastmodified: 2015-11-19T17:38:43.365Z
+    name
+      familyname: unknown.org
+      givenname: 212338875
+    emails: 
+    -
+      value: 212338875@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212338875
+    username: 212338875
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-19T17:38:43.365Z
+  -
+    id: e8b67501-6f1a-4e43-91fe-c7c7a8f71c0d
+    meta
+      version: 0
+      created: 2015-11-19T17:46:26.171Z
+      lastmodified: 2015-11-19T17:46:26.171Z
+    name
+      familyname: unknown.org
+      givenname: 105065253
+    emails: 
+    -
+      value: 105065253@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105065253
+    username: 105065253
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-19T17:46:26.171Z
+  -
+    id: e200dad6-7d4f-47dd-9e6b-fa9af7e17ab9
+    meta
+      version: 0
+      created: 2015-11-20T07:30:55.010Z
+      lastmodified: 2015-11-20T07:30:55.010Z
+    name
+      familyname: unknown.org
+      givenname: 105043242
+    emails: 
+    -
+      value: 105043242@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105043242
+    username: 105043242
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-20T07:30:55.010Z
+  -
+    id: 7dec4ba4-4f26-4597-a771-d8ea380fde0b
+    meta
+      version: 0
+      created: 2015-11-22T02:56:09.140Z
+      lastmodified: 2015-11-22T02:56:09.140Z
+    name
+      familyname: unknown.org
+      givenname: jarufea
+    emails: 
+    -
+      value: jarufea@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: jarufea
+    username: jarufea
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-22T02:56:09.140Z
+  -
+    id: 1d0acb89-65fc-4f7c-b434-a42a119fdb60
+    meta
+      version: 0
+      created: 2015-11-23T09:56:53.608Z
+      lastmodified: 2015-11-23T09:56:53.608Z
+    name
+      familyname: unknown.org
+      givenname: 212332198
+    emails: 
+    -
+      value: 212332198@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212332198
+    username: 212332198
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-23T09:56:53.608Z
+  -
+    id: def3fca5-bac7-42af-9b37-6035a2e7395e
+    meta
+      version: 0
+      created: 2015-11-23T14:10:22.480Z
+      lastmodified: 2015-11-23T14:10:22.480Z
+    name
+      familyname: unknown.org
+      givenname: 105040161
+    emails: 
+    -
+      value: 105040161@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105040161
+    username: 105040161
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-23T14:10:22.480Z
+  -
+    id: 5c8edfae-4ca5-4ab9-9a50-07b9c1ac269b
+    meta
+      version: 0
+      created: 2015-11-23T15:41:26.075Z
+      lastmodified: 2015-11-23T15:41:26.075Z
+    name
+      familyname: unknown.org
+      givenname: 105066090
+    emails: 
+    -
+      value: 105066090@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105066090
+    username: 105066090
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-23T15:41:26.075Z
+  -
+    id: 25f2be09-21a2-4d32-b14b-5c682ca51bed
+    meta
+      version: 0
+      created: 2015-11-24T09:10:22.784Z
+      lastmodified: 2015-11-24T09:10:22.784Z
+    name
+      familyname: unknown.org
+      givenname: 105043787
+    emails: 
+    -
+      value: 105043787@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105043787
+    username: 105043787
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-24T09:10:22.784Z
+  -
+    id: 24fcd946-8a43-40b2-ad36-12c70f9aa1e1
+    meta
+      version: 0
+      created: 2015-11-25T05:25:13.649Z
+      lastmodified: 2015-11-25T05:25:13.649Z
+    name
+      familyname: unknown.org
+      givenname: 212426388
+    emails: 
+    -
+      value: 212426388@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212426388
+    username: 212426388
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-25T05:25:13.649Z
+  -
+    id: d268800a-1a65-412c-b1dd-5fd976cba9d6
+    meta
+      version: 0
+      created: 2015-11-25T11:26:29.068Z
+      lastmodified: 2015-11-25T11:26:29.068Z
+    name
+      familyname: unknown.org
+      givenname: 105015844
+    emails: 
+    -
+      value: 105015844@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105015844
+    username: 105015844
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-25T11:26:29.068Z
+  -
+    id: 101e9018-df71-441d-97aa-b6b4133017a5
+    meta
+      version: 0
+      created: 2015-11-25T16:03:44.318Z
+      lastmodified: 2015-11-25T16:03:44.318Z
+    name
+      familyname: unknown.org
+      givenname: 212317540
+    emails: 
+    -
+      value: 212317540@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212317540
+    username: 212317540
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-25T16:03:44.318Z
+  -
+    id: dcd8406b-238d-4661-a148-4ad21d7e6ca9
+    meta
+      version: 0
+      created: 2015-11-25T21:51:52.164Z
+      lastmodified: 2015-11-25T21:51:52.164Z
+    name
+      familyname: unknown.org
+      givenname: 212433781
+    emails: 
+    -
+      value: 212433781@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212433781
+    username: 212433781
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-25T21:51:52.164Z
+  -
+    id: 0aa63afc-6fd0-4d67-8ef9-fdb478e32cf6
+    meta
+      version: 0
+      created: 2015-11-26T09:59:31.746Z
+      lastmodified: 2015-11-26T09:59:31.746Z
+    name
+      familyname: unknown.org
+      givenname: 212320262
+    emails: 
+    -
+      value: 212320262@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212320262
+    username: 212320262
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-26T09:59:31.746Z
+  -
+    id: bb933f1a-99e9-4ac4-a9d5-3cc5fd0dc239
+    meta
+      version: 0
+      created: 2015-11-27T09:16:30.115Z
+      lastmodified: 2015-11-27T09:16:30.115Z
+    name
+      familyname: unknown.org
+      givenname: fam_test_customer
+    emails: 
+    -
+      value: fam_test_customer@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: fam_test_customer
+    username: fam_test_customer
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-27T09:16:30.115Z
+  -
+    id: ca386635-49c7-4734-abeb-38e61f1a3ebb
+    meta
+      version: 0
+      created: 2015-11-27T11:06:47.881Z
+      lastmodified: 2015-11-27T11:06:47.881Z
+    name
+      familyname: unknown.org
+      givenname: 212433594
+    emails: 
+    -
+      value: 212433594@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212433594
+    username: 212433594
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-27T11:06:47.881Z
+  -
+    id: bf10aab0-731e-4aa8-8aba-3d6a240d143c
+    meta
+      version: 0
+      created: 2015-11-30T08:19:58.846Z
+      lastmodified: 2015-11-30T08:19:58.846Z
+    name
+      familyname: unknown.org
+      givenname: 212340479
+    emails: 
+    -
+      value: 212340479@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212340479
+    username: 212340479
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-11-30T08:19:58.846Z
+  -
+    id: 7a4028ff-c2ba-4177-8f64-89270d62019c
+    meta
+      version: 0
+      created: 2015-12-01T09:11:37.262Z
+      lastmodified: 2015-12-01T09:11:37.262Z
+    name
+      familyname: unknown.org
+      givenname: 212442361
+    emails: 
+    -
+      value: 212442361@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212442361
+    username: 212442361
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-01T09:11:37.262Z
+  -
+    id: 19337727-f39d-4401-b59d-23ac185bd954
+    meta
+      version: 0
+      created: 2015-12-01T13:34:09.730Z
+      lastmodified: 2015-12-01T13:34:09.730Z
+    name
+      familyname: unknown.org
+      givenname: 105034028
+    emails: 
+    -
+      value: 105034028@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105034028
+    username: 105034028
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-01T13:34:09.730Z
+  -
+    id: f4399073-328c-4468-866c-8d0be57e8dff
+    meta
+      version: 0
+      created: 2015-12-01T22:59:12.320Z
+      lastmodified: 2015-12-01T22:59:12.320Z
+    name
+      familyname: unknown.org
+      givenname: 105042475
+    emails: 
+    -
+      value: 105042475@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105042475
+    username: 105042475
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-01T22:59:12.320Z
+  -
+    id: 3b8fe1a3-7d67-43a7-96b3-2a54db081465
+    meta
+      version: 0
+      created: 2015-12-02T01:27:47.077Z
+      lastmodified: 2015-12-02T01:27:47.077Z
+    name
+      familyname: unknown.org
+      givenname: 105709919
+    emails: 
+    -
+      value: 105709919@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105709919
+    username: 105709919
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-02T01:27:47.077Z
+  -
+    id: eb3af3d9-c746-4112-86e2-0642bf96dcef
+    meta
+      version: 0
+      created: 2015-12-02T05:07:01.634Z
+      lastmodified: 2015-12-02T05:07:01.634Z
+    name
+      familyname: unknown.org
+      givenname: 105045287
+    emails: 
+    -
+      value: 105045287@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105045287
+    username: 105045287
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-02T05:07:01.634Z
+  -
+    id: 9c883a29-f358-45e6-b80f-6a07e637e05f
+    meta
+      version: 0
+      created: 2015-12-03T15:13:52.442Z
+      lastmodified: 2015-12-03T15:13:52.442Z
+    name
+      familyname: unknown.org
+      givenname: 204051899
+    emails: 
+    -
+      value: 204051899@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 204051899
+    username: 204051899
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-03T15:13:52.442Z
+  -
+    id: 2bcc115d-ff14-4540-94f7-095c758476ab
+    meta
+      version: 0
+      created: 2015-12-03T20:23:40.322Z
+      lastmodified: 2015-12-03T20:23:40.322Z
+    name
+      familyname: bg-group.com
+      givenname: craig.mcfarlane
+    emails: 
+    -
+      value: craig.mcfarlane@bg-group.com
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: craig.mcfarlane@bg-group.com
+    username: craig.mcfarlane@bg-group.com
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-03T20:23:40.322Z
+  -
+    id: 20c824bb-e287-4594-8e4d-9a9617eb2f6a
+    meta
+      version: 0
+      created: 2015-12-04T03:33:29.316Z
+      lastmodified: 2015-12-04T03:33:29.316Z
+    name
+      familyname: unknown.org
+      givenname: 105703837
+    emails: 
+    -
+      value: 105703837@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105703837
+    username: 105703837
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-04T03:33:29.316Z
+  -
+    id: 65e0816f-6970-47d3-810e-8fc5cc2e095d
+    meta
+      version: 0
+      created: 2015-12-04T11:46:02.265Z
+      lastmodified: 2015-12-04T11:46:02.265Z
+    name
+      familyname: bg-group.com
+      givenname: jonathan.ramm
+    emails: 
+    -
+      value: jonathan.ramm@bg-group.com
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: jonathan.ramm@bg-group.com
+    username: jonathan.ramm@bg-group.com
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-04T11:46:02.265Z
+  -
+    id: 2dcd1b0f-9742-4867-9684-b6ef2576d4e8
+    meta
+      version: 0
+      created: 2015-12-08T19:33:16.596Z
+      lastmodified: 2015-12-08T19:33:16.596Z
+    name
+      familyname: unknown.org
+      givenname: 212317382
+    emails: 
+    -
+      value: 212317382@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212317382
+    username: 212317382
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-08T19:33:16.596Z
+  -
+    id: 1bad5aca-e6b5-4568-9f6f-7f204223d54c
+    meta
+      version: 0
+      created: 2015-12-09T04:32:05.849Z
+      lastmodified: 2015-12-09T04:32:05.849Z
+    name
+      familyname: unknown.org
+      givenname: 300008333
+    emails: 
+    -
+      value: 300008333@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 300008333
+    username: 300008333
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-09T04:32:05.849Z
+  -
+    id: d6b7c713-7c57-4076-8095-e880ded42686
+    meta
+      version: 0
+      created: 2015-12-09T04:41:45.784Z
+      lastmodified: 2015-12-09T04:41:45.784Z
+    name
+      familyname: unknown.org
+      givenname: samuelmaihua
+    emails: 
+    -
+      value: samuelmaihua@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: samuelmaihua
+    username: samuelmaihua
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-09T04:41:45.784Z
+  -
+    id: aa65db29-dadd-4448-bacc-bd4a0a48168c
+    meta
+      version: 0
+      created: 2015-12-09T15:09:12.894Z
+      lastmodified: 2015-12-09T15:09:12.894Z
+    name
+      familyname: unknown.org
+      givenname: 105711882
+    emails: 
+    -
+      value: 105711882@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105711882
+    username: 105711882
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-09T15:09:12.894Z
+  -
+    id: 86ac04b5-0268-427e-b16d-62d32385bcae
+    meta
+      version: 0
+      created: 2015-12-10T07:27:40.300Z
+      lastmodified: 2015-12-10T07:27:40.300Z
+    name
+      familyname: unknown.org
+      givenname: 212317530
+    emails: 
+    -
+      value: 212317530@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212317530
+    username: 212317530
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-10T07:27:40.300Z
+  -
+    id: 33d1be00-13ae-47f4-879f-322f480a44ec
+    meta
+      version: 0
+      created: 2015-12-10T07:29:31.436Z
+      lastmodified: 2015-12-10T07:29:31.436Z
+    name
+      familyname: unknown.org
+      givenname: 212317529
+    emails: 
+    -
+      value: 212317529@unknown.org
+      primary: false
+    groups: 
+    -
+      value: 5db73a35-a6c6-492b-918c-9cab376ed550
+      display: uaa.user
+      type: DIRECT
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212317529
+    username: 212317529
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-10T07:29:31.436Z
+  -
+    id: 050adb02-75f8-4bfe-a231-774f6074293a
+    meta
+      version: 0
+      created: 2015-12-11T20:54:53.571Z
+      lastmodified: 2015-12-11T20:54:53.571Z
+    name
+      familyname: unknown.org
+      givenname: 212472308
+    emails: 
+    -
+      value: 212472308@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212472308
+    username: 212472308
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-11T20:54:53.000Z
+  -
+    id: 801a80d9-f2ad-46f6-9570-da8e33c5b808
+    meta
+      version: 0
+      created: 2015-12-11T20:55:00.865Z
+      lastmodified: 2015-12-11T20:55:00.865Z
+    name
+      familyname: unknown.org
+      givenname: 212472996
+    emails: 
+    -
+      value: 212472996@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212472996
+    username: 212472996
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-11T20:55:00.000Z
+  -
+    id: adedff25-73fc-4cee-890d-79c5ef6f7ef2
+    meta
+      version: 0
+      created: 2015-12-11T20:56:40.221Z
+      lastmodified: 2015-12-11T20:56:40.221Z
+    name
+      familyname: unknown.org
+      givenname: 212314537
+    emails: 
+    -
+      value: 212314537@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212314537
+    username: 212314537
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-11T20:56:40.000Z
+  -
+    id: b5353b5f-afbc-48a3-aade-f8fb98c1e9ff
+    meta
+      version: 0
+      created: 2015-12-11T21:38:28.079Z
+      lastmodified: 2015-12-11T21:38:28.079Z
+    name
+      familyname: unknown.org
+      givenname: 212321840
+    emails: 
+    -
+      value: 212321840@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212321840
+    username: 212321840
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-11T21:38:28.000Z
+  -
+    id: 336e84d0-2947-4263-bf9c-47105f6a447f
+    meta
+      version: 0
+      created: 2015-12-12T05:18:59.269Z
+      lastmodified: 2015-12-12T05:18:59.269Z
+    name
+      familyname: unknown.org
+      givenname: 105030370
+    emails: 
+    -
+      value: 105030370@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105030370
+    username: 105030370
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-12T05:18:59.000Z
+  -
+    id: a17c0aa7-c4a0-4eaf-b617-97fa593452f8
+    meta
+      version: 0
+      created: 2015-12-14T07:34:08.027Z
+      lastmodified: 2015-12-14T07:34:08.027Z
+    name
+      familyname: unknown.org
+      givenname: najib.prm3
+    emails: 
+    -
+      value: najib.prm3@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: najib.prm3
+    username: najib.prm3
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-14T07:34:08.000Z
+  -
+    id: 88cfa350-6700-48d4-bb5f-0d765b2e55bf
+    meta
+      version: 0
+      created: 2015-12-15T08:18:42.073Z
+      lastmodified: 2015-12-15T08:18:42.073Z
+    name
+      familyname: unknown.org
+      givenname: 212317539
+    emails: 
+    -
+      value: 212317539@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212317539
+    username: 212317539
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-15T08:18:42.000Z
+  -
+    id: ba467d71-2a76-466e-953c-f8977a845811
+    meta
+      version: 0
+      created: 2015-12-15T15:07:47.667Z
+      lastmodified: 2015-12-15T15:07:47.667Z
+    name
+      familyname: unknown.org
+      givenname: 105035455
+    emails: 
+    -
+      value: 105035455@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105035455
+    username: 105035455
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-15T15:07:47.000Z
+  -
+    id: 24b643f2-8c30-4d09-9e89-f0e7c7f20da7
+    meta
+      version: 0
+      created: 2015-12-15T16:40:42.385Z
+      lastmodified: 2015-12-15T16:40:42.385Z
+    name
+      familyname: unknown.org
+      givenname: 105035752
+    emails: 
+    -
+      value: 105035752@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105035752
+    username: 105035752
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-15T16:40:42.000Z
+  -
+    id: 340659b7-89ae-4f92-925b-05a86debd255
+    meta
+      version: 0
+      created: 2015-12-15T17:52:21.841Z
+      lastmodified: 2015-12-15T17:52:21.841Z
+    name
+      familyname: unknown.org
+      givenname: 212301006
+    emails: 
+    -
+      value: 212301006@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212301006
+    username: 212301006
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-15T17:52:21.000Z
+  -
+    id: 5a2bfdee-f1b7-4e79-8bad-cc9c44d964e9
+    meta
+      version: 0
+      created: 2015-12-16T06:53:27.816Z
+      lastmodified: 2015-12-16T06:53:27.816Z
+    name
+      familyname: unknown.org
+      givenname: 300003453
+    emails: 
+    -
+      value: 300003453@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 300003453
+    username: 300003453
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-16T06:53:27.000Z
+  -
+    id: 88070c51-541a-458f-b706-fc817f24c458
+    meta
+      version: 0
+      created: 2015-12-16T06:54:05.010Z
+      lastmodified: 2015-12-16T06:54:05.010Z
+    name
+      familyname: unknown.org
+      givenname: 105047524
+    emails: 
+    -
+      value: 105047524@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105047524
+    username: 105047524
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-16T06:54:05.000Z
+  -
+    id: c87dcd88-f21e-492b-8abc-97810c8023fe
+    meta
+      version: 0
+      created: 2015-12-21T00:14:59.254Z
+      lastmodified: 2015-12-21T00:14:59.254Z
+    name
+      familyname: unknown.org
+      givenname: 105052368
+    emails: 
+    -
+      value: 105052368@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105052368
+    username: 105052368
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-21T00:14:59.000Z
+  -
+    id: 9b9c5eda-a41c-467c-9265-fc3ec60e9647
+    meta
+      version: 0
+      created: 2015-12-22T10:29:25.314Z
+      lastmodified: 2015-12-22T10:29:25.314Z
+    name
+      familyname: unknown.org
+      givenname: 105034521
+    emails: 
+    -
+      value: 105034521@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105034521
+    username: 105034521
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-22T10:29:25.000Z
+  -
+    id: ba4706ca-fb76-4079-b48c-c0d5458d72b0
+    meta
+      version: 0
+      created: 2015-12-22T11:54:58.262Z
+      lastmodified: 2015-12-22T11:54:58.262Z
+    name
+      familyname: unknown.org
+      givenname: 105038620
+    emails: 
+    -
+      value: 105038620@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105038620
+    username: 105038620
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-22T11:54:58.000Z
+  -
+    id: e61e1b79-50f6-48b8-8398-ceb8a6db2686
+    meta
+      version: 0
+      created: 2015-12-23T11:25:46.910Z
+      lastmodified: 2015-12-23T11:25:46.910Z
+    name
+      familyname: unknown.org
+      givenname: 105050188
+    emails: 
+    -
+      value: 105050188@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 105050188
+    username: 105050188
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-23T11:25:46.000Z
+  -
+    id: b1b2b0bb-43d8-4a34-a69a-e3907e1b0046
+    meta
+      version: 0
+      created: 2015-12-25T02:28:19.316Z
+      lastmodified: 2015-12-25T02:28:19.316Z
+    name
+      familyname: unknown.org
+      givenname: meruani
+    emails: 
+    -
+      value: meruani@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: meruani
+    username: meruani
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-25T02:28:19.000Z
+  -
+    id: dd896ff4-2a8f-4ea6-925d-8de47fa03389
+    meta
+      version: 4
+      created: 2015-12-29T02:56:58.901Z
+      lastmodified: 2016-02-20T20:48:58.560Z
+    name
+      familyname: unknown.org
+      givenname: eom50244
+    emails: 
+    -
+      value: eom50244@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: EOM50244
+    username: EOM50244
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2015-12-29T02:56:58.000Z
+  -
+    id: 961d44d5-8b3c-4649-837f-f708b66fb331
+    meta
+      version: 0
+      created: 2016-01-11T13:54:50.328Z
+      lastmodified: 2016-01-11T13:54:50.328Z
+    name
+      familyname: unknown.org
+      givenname: 204039280
+    emails: 
+    -
+      value: 204039280@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 204039280
+    username: 204039280
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2016-01-11T13:54:50.000Z
+  -
+    id: d1531f8f-dc93-4a34-9be7-ce361fc8a29f
+    meta
+      version: 0
+      created: 2016-01-11T15:18:22.451Z
+      lastmodified: 2016-01-11T15:18:22.451Z
+    name
+      familyname: unknown.org
+      givenname: 208044061
+    emails: 
+    -
+      value: 208044061@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 208044061
+    username: 208044061
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2016-01-11T15:18:22.000Z
+  -
+    id: 402de0ea-df46-4601-bac2-b10f5d5c2f47
+    meta
+      version: 0
+      created: 2016-01-11T16:06:40.450Z
+      lastmodified: 2016-01-11T16:06:40.450Z
+    name
+      familyname: unknown.org
+      givenname: 212425849
+    emails: 
+    -
+      value: 212425849@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 212425849
+    username: 212425849
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2016-01-11T16:06:40.000Z
+  -
+    id: 6b5ff35e-8e1d-4a5a-8480-75875123726e
+    meta
+      version: 0
+      created: 2016-01-11T21:38:51.353Z
+      lastmodified: 2016-01-11T21:38:51.353Z
+    name
+      familyname: unknown.org
+      givenname: 502553463
+    emails: 
+    -
+      value: 502553463@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 502553463
+    username: 502553463
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2016-01-11T21:38:51.000Z
+  -
+    id: 323b5433-38fb-4340-868f-b6ffa778663b
+    meta
+      version: 0
+      created: 2016-01-12T11:00:08.571Z
+      lastmodified: 2016-01-12T11:00:08.571Z
+    name
+      familyname: unknown.org
+      givenname: 501963321
+    emails: 
+    -
+      value: 501963321@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 501963321
+    username: 501963321
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2016-01-12T11:00:08.000Z
+  -
+    id: 09b5bcec-a2a0-4c49-a4c9-d0c798934d7f
+    meta
+      version: 0
+      created: 2016-01-13T08:52:11.232Z
+      lastmodified: 2016-01-13T08:52:11.232Z
+    name
+      familyname: unknown.org
+      givenname: 502213198
+    emails: 
+    -
+      value: 502213198@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 502213198
+    username: 502213198
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2016-01-13T08:52:11.000Z
+  -
+    id: e04312b3-0f39-4544-ac0a-cb6c7faa6212
+    meta
+      version: 0
+      created: 2016-01-13T11:00:57.903Z
+lastmodified: 2016-01-13T11:00:57.903Z
+    name
+      familyname: unknown.org
+      givenname: 502370278
+    emails: 
+    -
+      value: 502370278@unknown.org
+      primary: false
+    groups: 
+    approvals: 
+    active: true
+    verified: true
+    origin: test4-gesso-idp
+    schemas: urn:scim:schemas:core:1.0
+    externalid: 502370278
+    username: 502370278
+    zoneid: 28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2
+    passwordlastmodified: 2016-01-13T11:00:57.000Z
+  schemas: urn:scim:schemas:core:1.0
+  startindex: 1
+  itemsperpage: 100
+  totalresults: 248
+
+----------------
+[predix@localhost ~]$ uaac targets
+0   https://predix-uaa.grc-apps.svc.ice.ge.com
+1   https://stc.predix-uaa-test.grc-apps.svc.ice.ge.com
+2   https://d8b03515-1e7a-4d66-afec-290d3c2b502e.predix-uaa.run.aws-usw02-pr.ice.predix.io
+3   https://2d5aace9-bdb3-482e-bd57-854d1d339136.predix-uaa-training.run.aws-usw02-pr.ice.predix.io
+4 * https://5dcfd7b2-1fc6-48ed-8522-5831f089d476.predix-uaa-training.run.aws-usw02-pr.ice.predix.io
+5   https://9e155eb4-844b-4e8f-85ba-02bcc5d2967a.predix-uaa-training.run.aws-usw02-pr.ice.predix.io
+6   https://28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2.predix-uaa.run.aws-usw02-pr.ice.predix.io
+7   https://299fbc8e-3050-4392-8047-86d3fcc5a145.predix-uaa.run.aws-usw02-pr.ice.predix.io
+
+[predix@localhost ~]$ uaac target https://28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2.predix-uaa.run.aws-usw02-pr.ice.predix.io
+
+Target: https://28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2.predix-uaa.run.aws-usw02-pr.ice.predix.io
+Context: admin, from client admin
+
+[predix@localhost ~]$ uaac clients
+  admin
+    scope: uaa.none
+    resource_ids: none
+    authorized_grant_types: client_credentials
+    autoapprove: 
+    action: none
+    authorities: clients.read zones.28cb6fbe-b7ee-4b1f-b758-19f1c04e57b2.admin clients.secret idps.write uaa.resource clients.write clients.admin idps.read
+        scim.write scim.read
+    lastmodified: 1444765305820
+  relmaxsvcapp
+    scope: uaa.resource
+    resource_ids: none
+    authorized_grant_types: refresh_token client_credentials password
+    autoapprove: 
+    action: none
+    authorities: uaa.resource
+    lastmodified: 1444982755929
+  relmaxuiapp
+    scope: openid
+    resource_ids: none
+    authorized_grant_types: refresh_token authorization_code
+    redirect_uri: http://fam.geoilandgas.com
+    autoapprove: openid
+    action: none
+    authorities: uaa.resource
+    allowedproviders: test4-gesso-idp
+    lastmodified: 1447442894829
+  resmaxacsapp
+    scope: acs.policies.read uaa.resource acs.attributes.read predix-acs.zones.16354c51-8010-4100-9633-833a5eb01171.user
+    resource_ids: none
+    authorized_grant_types: refresh_token client_credentials password
+    autoapprove: 
+    action: none
+    authorities: uaa.resource predix-acs.zones.16354c51-8010-4100-9633-833a5eb01171.user
+    lastmodified: 1446148910017
+  resmaxpolicyapp
+    scope: acs.policies.read acs.policies.write uaa.resource acs.attributes.read predix-acs.zones.16354c51-8010-4100-9633-833a5eb01171.user
+        acs.attributes.write
+    resource_ids: none
+    authorized_grant_types: refresh_token client_credentials password
+    autoapprove: 
+    action: none
+    authorities: uaa.resource predix-acs.zones.16354c51-8010-4100-9633-833a5eb01171.user
+    lastmodified: 1446148932826
+  resmaxuiapp
+    scope: openid
+    resource_ids: none
+    authorized_grant_types: authorization_code refresh_token
+    redirect_uri: https://responsemax-prod.run.aws-usw02-pr.ice.predix.io
+    autoapprove: openid
+    action: none
+    authorities: uaa.resource
+    allowedproviders: test4-gesso-idp
+    lastmodified: 1446749917392
+  resmaxuiappvali
+    scope: openid
+    resource_ids: none
+    authorized_grant_types: authorization_code refresh_token
+    redirect_uri: http://localhost:9000
+    autoapprove: openid
+    action: none
+    authorities: uaa.resource
+    allowedproviders: prod-gesso-idp
+    lastmodified: 1446667533035
+  resmaxuiprodapp
+    scope: openid
+    resource_ids: none
+    authorized_grant_types: authorization_code refresh_token
+    redirect_uri: http://localhost:9000
+    autoapprove: openid
+    action: none
+    authorities: uaa.resource
+    allowedproviders: test4-gesso-idp
+    lastmodified: 1446663035168
+  test1resmaxuiapp
+    scope: openid
+    resource_ids: none
+    authorized_grant_types: authorization_code refresh_token
+    redirect_uri: www.google.com
+    autoapprove: openid
+    action: none
+    authorities: uaa.resource
+    allowedproviders: test-gesso-idp
+    lastmodified: 1445533827661
+  testapp
+    scope: openid
+    resource_ids: none
+    authorized_grant_types: authorization_code refresh_token
+    redirect_uri: http://localhost:9000
+    autoapprove: openid
+    action: none
+    authorities: uaa.resource
+    allowedproviders: test4-gesso-idp
+    lastmodified: 1445975383949
+  testresmaxuiapp
+    scope: openid
+    resource_ids: none
+    authorized_grant_types: authorization_code refresh_token
+    redirect_uri: www.google.com
+    autoapprove: openid
+    action: none
+    authorities: uaa.resource
+    allowedproviders: gesso-idp-0
+    lastmodified: 1445533173558

@@ -1,0 +1,6 @@
+applications:
+- name: cf-spring-mvc-demo-bill
+  memory: 512M
+  path: target/cf-spring-mvc-demo-0.0.1-SNAPSHOT.war
+  services: 
+          - new-relic

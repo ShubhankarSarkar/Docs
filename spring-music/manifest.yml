@@ -1,0 +1,4 @@
+applications:
+- name: sds-spring-music
+  memory: 512M
+  path: /predix/PredixApps/training_labs/CloudFoundryLabs/spring-music/pre-built/spring-music.war

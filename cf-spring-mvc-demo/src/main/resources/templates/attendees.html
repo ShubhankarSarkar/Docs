@@ -1,0 +1,71 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pivotal CF Workshop | All Attendees</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/modernizr.js"></script>
+  </head>
+  <body>
+
+    <nav class="top-bar" >
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="./">Pivotal CF</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+          <li><a href="./">Home</a></li>
+          <li><a href="attendees">Attendees</a></li>
+        </ul>
+      </section>
+    </nav>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>All Attendees</h3>
+        <hr/>
+      </div>
+    </div>
+	
+    <div class="row">
+      <div class="large-12 columns">
+        <table>
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Zip Code</th>
+              <th>Phone</th>
+              <th>Email Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="attendee : ${attendees}">
+              <td><a href="sessions.html" th:href="@{sessions(attendeeId=*{attendee.id})}"><p th:text="*{attendee.firstName}" /></a></td>
+              <td><p th:text="*{attendee.lastName}" /></td>
+              <td><p th:text="*{attendee.address}" /></td>
+              <td><p th:text="*{attendee.city}" /></td>
+              <td><p th:text="*{attendee.state}" /></td>
+              <td><p th:text="*{attendee.zipCode}" /></td>
+              <td><p th:text="*{attendee.phoneNumber}" /></td>
+              <td><p th:text="*{attendee.emailAddress}" /></td>
+            </tr>
+           </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+
+    </body>
+</html>
